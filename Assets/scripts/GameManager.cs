@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class GameManager : MonoBehaviour
     private float delay = 2;
 
     public int activeLine = -134;
+
+    public Text title;
+
+    public bool isPlaying = false;
 
     private void Update()
     {
