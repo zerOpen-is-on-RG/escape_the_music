@@ -47,15 +47,15 @@ public class Note : MonoBehaviour
 
             if (startPos.x < transform.position.x - 1f)
             {
-                sign.text = "¢º";
+                sign.text = "ï¿½ï¿½";
             }
             else if (startPos.x > transform.position.x + 1f)
             {
-                sign.text = "¢¸";
+                sign.text = "ï¿½ï¿½";
             }
             else
             {
-                sign.text = "¡å";
+                sign.text = "ï¿½ï¿½";
             }
 
             sign.text += "\n" + Mathf.Floor(Vector2.Distance(transform.position, startPos) / 4 * 10)/10;
@@ -75,7 +75,10 @@ public class Note : MonoBehaviour
 
         img.color = col;
 
-        if (transform.localPosition.y < -702) Destory();
+        if (transform.localPosition.y < -702) {
+            Destory();
+            _gameManager.player.hp -= 10;
+        }
     }
 
     public void Destory(float del_time = 0)

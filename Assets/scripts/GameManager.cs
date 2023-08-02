@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Canvas noteLine;
     public Note note;
     public GameObject trackingParticle;
+    public Slider Hp_slider;
 
     public TrackData track;
 
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
 
             notes.Add(_note);
         }*/
+
+        Hp_slider.value = player.hp;
 
         if (isPlaying)
         {
