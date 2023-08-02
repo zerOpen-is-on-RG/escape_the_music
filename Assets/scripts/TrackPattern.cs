@@ -62,7 +62,7 @@ public class TrackPattern : MonoBehaviour
                 float pointTime = Mathf.Floor(timeline * 100) / 100;
 
                 Pattern pattern = new Pattern();
-                name = pointTime.ToString();
+                pattern.name = pointTime.ToString();
                 pattern.timeline = pointTime;
                 pattern.x = point.x;
                 pattern.note = gameManager.note;

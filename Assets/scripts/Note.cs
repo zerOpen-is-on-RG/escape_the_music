@@ -94,10 +94,10 @@ public class Note : MonoBehaviour
     {
         isPressed = false;
 
-        if (startPos.x < transform.position.x - 1f) {
+        if (startPos.x < transform.position.x - 1.25f) {
             Debug.Log("Right");
             _gameManager.MoveRight(Vector2.Distance(transform.position, startPos) / 4);
-        } else if (startPos.x > transform.position.x + 1f)
+        } else if (startPos.x > transform.position.x + 1.25f)
         {
             Debug.Log("Left");
             _gameManager.Moveleft(Vector2.Distance(transform.position, startPos) / 4);
