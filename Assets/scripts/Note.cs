@@ -75,7 +75,7 @@ public class Note : MonoBehaviour
 
         img.color = col;
 
-        if (transform.localPosition.y < -442) Destory();
+        if (transform.localPosition.y < -702) Destory();
     }
 
     public void Destory(float del_time = 0)
