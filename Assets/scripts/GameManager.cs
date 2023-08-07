@@ -101,7 +101,21 @@ public class GameManager : MonoBehaviour
 
     public void MoveDown()
     {
+        StartCoroutine(_moveDown());
+    }
+    IEnumerator _moveDown()
+    {
+        player.down = false;
         track.structure.transform.DOMove(new Vector2(track.structure.transform.position.x, track.structure.transform.position.y - 3f), 0.2f);
+
+        yield return new WaitForSeconds(0.3f);
+        player.down = true;
+
+        player.hp -= 20;
+    }
+    public void MoveUp()
+    {
+        track.structure.transform.DOMove(new Vector2(track.structure.transform.position.x, track.structure.transform.position.y + 3f), 0.15f);
     }
     public void Moveleft(float distance)
     {
