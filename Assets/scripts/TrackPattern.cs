@@ -64,7 +64,6 @@ public class TrackPattern : MonoBehaviour
                 pattern.name = pointTime.ToString();
                 pattern.timeline = pointTime;
                 pattern.x = point.x;
-                pattern.note = gameManager.note;
 
                 var particle = Instantiate(gameManager.trackingParticle, point, Quaternion.identity);
                 Destroy(particle, 0.8f);

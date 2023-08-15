@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     public Canvas noteLine;
     public Note note;
     public GameObject trackingParticle;
-    public Slider Hp_slider;
+    public GameObject blur;
+    public GameObject screen;
+    public GameObject tv;
+    public Vcam vcam;
 
     public TrackData track;
 
@@ -24,13 +27,14 @@ public class GameManager : MonoBehaviour
     public Text title;
 
     public bool isPlaying = false;
+    public bool detecting = false;
 
     public float timeline = 0;
-    public float timeline2 = 0;
     public List<float> endPattern = new();
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         if (track != null)
         {
             StartCoroutine(_start());
@@ -39,17 +43,33 @@ public class GameManager : MonoBehaviour
 
     IEnumerator _start()
     {
+        screen.transform.localScale = Vector2.zero;
+        tv.transform.localPosition = new Vector2(0, -1000);
+        tv.transform.DOLocalMove(Vector2.zero, 0.8f);
+        tv.transform.DOScale(new Vector2(1.1f, 1.1f), 0.8f);
+        yield return new WaitForSeconds(0.8f);
+
+        tv.transform.DOScale(new Vector2(1f, 1f), 0.2f);
+        yield return new WaitForSeconds(0.2f);
+
+        screen.transform.DOScale(Vector2.one, 3f);
+
         timeline = 0;
-        for (int i = 3; i > 0; i--)
+        for (int i = 5; i > 0; i--)
         {
             title.text = i.ToString();
             title.color = Color.white;
+            soundManager.Play("effect.click");
             yield return new WaitForSeconds(1);
         }
 
         title.text = "";
+
+        yield return new WaitForSeconds(1);
+
         soundManager.Play(track.music);
         isPlaying = true;
+        detecting = false;
     }
 
     private void Update()
@@ -69,13 +89,9 @@ public class GameManager : MonoBehaviour
             notes.Add(_note);
         }*/
 
-        Hp_slider.value = player.hp;
-
         if (isPlaying)
         {
             timeline += Time.deltaTime;
-
-            timeline2 = Mathf.Floor(timeline * 10) / 10;
 
             //if ((Mathf.Floor(timeline * 10) / 10).Equals(1.1f)) Debug.Log((Mathf.Floor(timeline * 10) / 10).Equals(1.1f));
             for (int i = 0; i < track.pattern.patterns.Count; i++)
@@ -88,6 +104,8 @@ public class GameManager : MonoBehaviour
                 var _note = Instantiate(note);
                 _note.transform.SetParent(noteLine.transform, false);
 
+                _note.type = pattern.noteType;
+
                 _note.transform.position = new Vector2(pattern.x, 0);
                 _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 700);
                 _note.speed = track.pattern.patternSpeed;
@@ -96,6 +114,8 @@ public class GameManager : MonoBehaviour
 
                 endPattern.Add(pattern.timeline);
             }
+
+            track.effect.EffectUpdate(timeline);
         }
     }
 
@@ -106,12 +126,10 @@ public class GameManager : MonoBehaviour
     IEnumerator _moveDown()
     {
         player.down = false;
-        track.structure.transform.DOMove(new Vector2(track.structure.transform.position.x, track.structure.transform.position.y - 3f), 0.2f);
+        track.structure.transform.DOLocalMove(new Vector2(track.structure.transform.localPosition.x, track.structure.transform.localPosition.y - 3f), 0.2f);
 
         yield return new WaitForSeconds(0.3f);
         player.down = true;
-
-        player.hp -= 20;
     }
     public void MoveUp()
     {

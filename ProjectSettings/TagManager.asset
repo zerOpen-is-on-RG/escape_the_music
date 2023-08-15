@@ -45,6 +45,9 @@ TagManager:
   - name: object
     uniqueID: 1195113035
     locked: 0
+  - name: sight
+    uniqueID: 3305427097
+    locked: 0
   - name: note
     uniqueID: 1086401381
     locked: 0

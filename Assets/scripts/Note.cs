@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,79 +6,120 @@ using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     public float speed;
+    public ParticleSystem effect;
     Vector2 startPos;
     bool isPressed;
+    bool broken = false;
 
-    Image img;
-    Text sign;
+    public string type;
+
+    public Image img;
+
+    public Sprite def;
+    public Sprite hold;
+    public Sprite right;
+    public Sprite left;
+
+    public Sprite upIcon;
+    public Sprite downIcon;
+    public Sprite horizontalicon;
 
     GameManager _gameManager;
+
+    public Image icon;
 
     int touchId;
 
     private void Start()
     {
-        img = GetComponent<Image>();
-
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        sign = transform.Find("noteSign").GetComponent <Text>();
     }
 
     private void Update()
     {
-        Color col = img.color;
-
-        if (transform.localPosition.y > _gameManager.activeLine)
+        if (!broken)
         {
-            col = Color.gray;
-        } else
-        {
-            col = new Color(0, 206, 255);
-        }
+            Color col = img.color;
 
-        if (isPressed)
-        {
-            Vector2 pos = (touchId == -1) ? Input.mousePosition : Input.GetTouch(touchId).position;
-            var point = Camera.main.ScreenToWorldPoint(pos);
-            transform.position = new Vector2(point.x, transform.position.y);
-
-            col = Color.yellow;
-
-            sign.transform.position = startPos;
-
-            if (startPos.x < transform.position.x - 1f)
+            if (type.Equals("up"))
             {
-                sign.text = "��";
+                col = new Color(0, 206, 255);
+
+                icon.sprite = upIcon;
             }
-            else if (startPos.x > transform.position.x + 1f)
+            else if (type.Equals("down"))
             {
-                sign.text = "��";
+                col = new Color(0, 206, 255);
+
+                icon.sprite = downIcon;
+            }
+            else if (type.Equals("horizontal1"))
+            {
+                col = Color.yellow;
+                icon.sprite = horizontalicon;
+            }
+            else if (type.Equals("horizontal2"))
+            {
+                col = new Color(255, 106, 0);
+                icon.sprite = horizontalicon;
             }
             else
             {
-                sign.text = "��";
+                col = Color.white;
+                icon.color = new Color(0, 0, 0, 0);
             }
 
-            sign.text += "\n" + Mathf.Floor(Vector2.Distance(transform.position, startPos) / 4 * 10)/10;
+            if (transform.localPosition.y > _gameManager.activeLine)
+            {
+                col.a = 0.6f;
+            }
+            else
+            {
+                col.a = 0.9f;
+            }
 
-            transform.localScale = new Vector2(1.1f, 1.1f);
-        }
-        else
-        {
-            col.a = 0.7f;
+            if (isPressed)
+            {
+                Vector2 pos = (touchId == -1) ? Input.mousePosition : Input.GetTouch(touchId).position;
+                var point = Camera.main.ScreenToWorldPoint(pos);
+                transform.position = new Vector2(point.x, transform.position.y);
 
-            sign.text = "";
+                transform.localScale = new Vector2(1.1f, 1.1f);
 
-            transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
+                if (type.StartsWith("horizontal"))
+                {
+                    if (startPos.x < transform.position.x - 1.25f)
+                    {
+                        img.sprite = right;
+                    }
+                    else if (startPos.x > transform.position.x + 1.25f)
+                    {
+                        img.sprite = left;
+                    }
+                    else
+                    {
+                        img.sprite = hold;
+                    }
+                }
 
-            transform.localScale = new Vector2(1f, 1f);
-        }
+                icon.gameObject.SetActive(false);
+            }
+            else
+            {
+                transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y - speed * 50 * Time.deltaTime);
 
-        img.color = col;
+                transform.localScale = new Vector2(1f, 1f);
 
-        if (transform.localPosition.y < -702) {
-            Destory();
-            _gameManager.player.hp -= 10;
+                img.sprite = def;
+            }
+
+            img.color = col;
+
+            if (transform.localPosition.y < -702)
+            {
+                Destory();
+                _gameManager.player.hp -= 10;
+            }
         }
     }
 
@@ -91,27 +133,55 @@ public class Note : MonoBehaviour
         startPos = transform.position;
         touchId = Input.touchCount - 1;
         isPressed = true;
+
+        if (type.Equals("default") || type.Equals("up"))
+        {
+            NoteUp();
+        }
     }
 
     public void NoteUp()
     {
-        isPressed = false;
+        if (broken) return;
 
-        if (startPos.x < transform.position.x - 1.25f) {
-            Debug.Log("Right");
-            _gameManager.MoveRight(Vector2.Distance(transform.position, startPos) / 4);
-        } else if (startPos.x > transform.position.x + 1.25f)
+        isPressed = false;
+        broken = true;
+
+        if (type == "horizontal1")
         {
-            Debug.Log("Left");
-            _gameManager.Moveleft(Vector2.Distance(transform.position, startPos) / 4);
-        } else
+            if (startPos.x < transform.position.x - 1.25f)
+            {
+                _gameManager.MoveRight(1);
+            }
+            else if (startPos.x > transform.position.x + 1.25f)
+            {
+                _gameManager.Moveleft(1);
+            }
+        } else if (type == "horizontal2")
         {
-            Debug.Log("Click");
+            if (startPos.x < transform.position.x - 1.25f)
+            {
+                _gameManager.MoveRight(2);
+            }
+            else if (startPos.x > transform.position.x + 1.25f)
+            {
+                _gameManager.Moveleft(2);
+            }
+        } else if (type == "up")
+        {
             _gameManager.MoveDown();
+        }
+        else if (type == "down")
+        {
+            _gameManager.MoveUp();
         }
 
         transform.position = startPos;
 
-        Destory(0.1f);
+        var eff = Instantiate(effect, transform.position, Quaternion.identity);
+
+        //eff.transform.DORotate(new Vector3(0, 0, Random.Range(-20f, 20f)), 0.15f);
+        eff.transform.DOScale(new Vector3(2, 0.7f), 0.15f);
+        Destory();
     }
 }
