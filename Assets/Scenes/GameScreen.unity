@@ -1234,12 +1234,14 @@ MonoBehaviour:
   tv: {fileID: 1475363555}
   vcam: {fileID: 1025078617}
   track: {fileID: 50101568}
+  score: 0
   notes: []
   activeLine: -134
   title: {fileID: 143433443}
   isPlaying: 0
   detecting: 0
   timeline: 0
+  forceTimeline: 0
   endPattern: []
 --- !u!4 &180769688
 Transform:
@@ -1281,12 +1283,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266545781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -412.54694, y: -217.12752, z: 909.2847}
-  m_LocalScale: {x: 108, y: 108, z: 108}
+  m_LocalPosition: {x: -3.7298796, y: 0.01955986, z: 84.790276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 597992299}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266545783
 MonoBehaviour:
@@ -1699,9 +1701,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 143433445}
-  - {fileID: 266545782}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1861,7 +1862,7 @@ Transform:
   m_GameObject: {fileID: 651955802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.7, y: 2.1, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1710436549}

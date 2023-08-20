@@ -51,6 +51,8 @@ public class BlueBirdEffect : TrackEffectBase
             }
         }
 
+        if (timeline >= 11)
+
         if (timeline >= 14f && timeline <= 14.5f) gameManager.blur.SetActive(true);
         if (timeline >= 14.5f && timeline <= 14.8f)
             {

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public TrackData track;
 
+    public float score;
+
     [HideInInspector]
     public List<Note> notes;
 
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     public bool detecting = false;
 
     public float timeline = 0;
+    public float forceTimeline = 0;
     public List<float> endPattern = new();
 
     private void Start()
@@ -65,9 +68,20 @@ public class GameManager : MonoBehaviour
 
         title.text = "";
 
-        yield return new WaitForSeconds(1);
+        if (forceTimeline > 0)
+        {
+            for (float i = 0; i <= forceTimeline; i+=0.2f)
+            {
+                track.effect.EffectUpdate(timeline);
+
+                timeline += 0.2f;
+            }
+        }
+
+        yield return new WaitForSecondsRealtime(1);
 
         soundManager.Play(track.music);
+        soundManager._tracks[3].time = forceTimeline;
         isPlaying = true;
         detecting = false;
     }
@@ -114,6 +128,8 @@ public class GameManager : MonoBehaviour
 
                 endPattern.Add(pattern.timeline);
             }
+
+            score += Mathf.FloorToInt(1 * Time.deltaTime);
 
             track.effect.EffectUpdate(timeline);
         }
