@@ -110,6 +110,8 @@ public class BlueBirdEffect : TrackEffectBase
         {
             map.transform.localPosition = new Vector2(map.transform.localPosition.x + 2f, map.transform.localPosition.y);
 
+            gameManager.detecting = true;
+
             gameManager.vcam.Shake(1);
             backMotionTimer = 0;
         }

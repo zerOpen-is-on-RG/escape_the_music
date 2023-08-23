@@ -16,10 +16,15 @@ public class GameManager : MonoBehaviour
     public GameObject screen;
     public GameObject tv;
     public Vcam vcam;
+    public ComboSign comboSign;
+    public Text scoreIndicator;
 
     public TrackData track;
 
-    public float score;
+    public int score;
+    public int combo = 0;
+
+    float autoScore = 0;
 
     [HideInInspector]
     public List<Note> notes;
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
     public float timeline = 0;
     public float forceTimeline = 0;
     public List<float> endPattern = new();
+
+
 
     private void Start()
     {
@@ -129,9 +136,17 @@ public class GameManager : MonoBehaviour
                 endPattern.Add(pattern.timeline);
             }
 
-            score += Mathf.FloorToInt(1 * Time.deltaTime);
+            autoScore += Time.deltaTime;
+
+            if (autoScore > 1)
+            {
+                autoScore = 0;
+                score += 7;
+            }
 
             track.effect.EffectUpdate(timeline);
+
+            scoreIndicator.text = score.ToString();
         }
     }
 

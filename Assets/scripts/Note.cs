@@ -71,7 +71,7 @@ public class Note : MonoBehaviour
 
             if (transform.localPosition.y > _gameManager.activeLine)
             {
-                col.a = 0.6f;
+                col.a = 0.4f;
             }
             else
             {
@@ -117,13 +117,15 @@ public class Note : MonoBehaviour
 
             if (transform.localPosition.y < -702)
             {
-                Destory();
-                _gameManager.player.hp -= 10;
+                Destory_();
+
+                _gameManager.combo = 0;
+                _gameManager.comboSign.OnCombo(-1);
             }
         }
     }
 
-    public void Destory(float del_time = 0)
+    public void Destory_(float del_time = 0)
     {
         _gameManager.notes.Remove(this);
         Destroy(gameObject, del_time);
@@ -133,6 +135,16 @@ public class Note : MonoBehaviour
         startPos = transform.position;
         touchId = Input.touchCount - 1;
         isPressed = true;
+
+        if (transform.localPosition.y > _gameManager.activeLine)
+        {
+            Destory_();
+
+            _gameManager.combo = 0;
+            _gameManager.comboSign.OnCombo(-1);
+
+            return;
+        }
 
         if (type.Equals("default") || type.Equals("up"))
         {
@@ -181,7 +193,27 @@ public class Note : MonoBehaviour
         var eff = Instantiate(effect, transform.position, Quaternion.identity);
 
         //eff.transform.DORotate(new Vector3(0, 0, Random.Range(-20f, 20f)), 0.15f);
+        _gameManager.combo++;
+
         eff.transform.DOScale(new Vector3(2, 0.7f), 0.15f);
-        Destory();
+
+        Debug.Log(Mathf.Abs(transform.localPosition.y - _gameManager.activeLine));
+        if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 150)
+        {
+            _gameManager.comboSign.OnCombo(3);
+        } else if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 200)
+        {
+            _gameManager.comboSign.OnCombo(2);
+        }
+        else if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 250)
+        {
+            _gameManager.comboSign.OnCombo(1);
+        }
+        else
+        {
+            _gameManager.comboSign.OnCombo(0);
+        }
+
+        Destory_();
     }
 }
