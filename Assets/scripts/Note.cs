@@ -146,6 +146,9 @@ public class Note : MonoBehaviour
             return;
         }
 
+        _gameManager.soundManager.Play("effect.tab");
+        _gameManager.soundManager._tracks[1].time = 0.1f;
+
         if (type.Equals("default") || type.Equals("up"))
         {
             NoteUp();

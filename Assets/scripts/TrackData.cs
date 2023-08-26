@@ -6,7 +6,12 @@ using UnityEngine.Tilemaps;
 public class TrackData : MonoBehaviour
 {
     public Tilemap structure;
+
     public string _name;
+    public string displayName;
+    public string author;
+    public Sprite logoBackground;
+
     public string music;
     public TrackEffectBase effect;
 

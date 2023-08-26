@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject blur;
     public GameObject screen;
     public GameObject tv;
+    public TrackSet trackSet;
     public Vcam vcam;
     public ComboSign comboSign;
     public Text scoreIndicator;
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
+
+        track = trackSet.FindByName(PlayerPrefs.GetString("selectedMusic"));
         if (track != null)
         {
             StartCoroutine(_start());
