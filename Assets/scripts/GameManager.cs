@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<Note> notes;
 
-    public int activeLine = -134;
+    public int activeLine = 0;//-134;
 
     public Text title;
 
@@ -41,13 +41,15 @@ public class GameManager : MonoBehaviour
     public float forceTimeline = 0;
     public List<float> endPattern = new();
 
-
+    private Vector2 downingPos = Vector2.zero;
 
     private void Start()
     {
         Application.targetFrameRate = 60;
 
-        track = trackSet.FindByName(PlayerPrefs.GetString("selectedMusic"));
+        track = Instantiate(trackSet.FindByName(PlayerPrefs.GetString("selectedMusic")));
+        track.transform.SetParent(screen.transform, false);
+        track.transform.localPosition = new Vector3(10, 2, 0);
         if (track != null)
         {
             StartCoroutine(_start());
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour
                 _note.type = pattern.noteType;
 
                 _note.transform.position = new Vector2(pattern.x, 0);
-                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 700);
+                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 834);
                 _note.speed = track.pattern.patternSpeed;
 
                 notes.Add(_note);
@@ -160,9 +162,21 @@ public class GameManager : MonoBehaviour
     IEnumerator _moveDown()
     {
         player.down = false;
-        track.structure.transform.DOLocalMove(new Vector2(track.structure.transform.localPosition.x, track.structure.transform.localPosition.y - 3f), 0.2f);
+        if (downingPos.x != 0 && downingPos.y != 0) {
+            Debug.Log(downingPos);
+            player.transform.DOKill();
+            player.transform.localPosition = downingPos;
+        }
+
+        var downPos = new Vector2(track.structure.transform.localPosition.x, track.structure.transform.localPosition.y - 3f);
+        downingPos = downPos;
+        track.structure.transform.DOLocalMove(downPos, 0.2f);
 
         yield return new WaitForSeconds(0.3f);
+        if (!downingPos.Equals(downPos)) {
+            yield break;
+        }
+        downingPos = Vector2.zero;
         player.down = true;
     }
     public void MoveUp()
@@ -172,9 +186,11 @@ public class GameManager : MonoBehaviour
     public void Moveleft(float distance)
     {
         player.transform.DOMove(new Vector2(player.transform.position.x - distance, player.transform.position.y), 0.2f);
+        player.MoveMotion(true);
     }
     public void MoveRight(float distance)
     {
         player.transform.DOMove(new Vector2(player.transform.position.x + distance, player.transform.position.y), 0.2f);
+        player.MoveMotion(false);
     }
 }

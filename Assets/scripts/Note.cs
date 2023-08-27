@@ -200,7 +200,6 @@ public class Note : MonoBehaviour
 
         eff.transform.DOScale(new Vector3(2, 0.7f), 0.15f);
 
-        Debug.Log(Mathf.Abs(transform.localPosition.y - _gameManager.activeLine));
         if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 150)
         {
             _gameManager.comboSign.OnCombo(3);

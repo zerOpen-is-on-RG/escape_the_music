@@ -28,6 +28,8 @@ public class SelectMusic : MonoBehaviour
         {
             trackData = f;
         }
+
+        Debug.Log(trackData.displayName);
     }
 
     public void DisplayMusic()

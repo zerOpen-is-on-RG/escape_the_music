@@ -11,14 +11,27 @@ public struct DataResult
 }
 public class StageDB : MonoBehaviour
 {
-    string dir = "./stageData.db";
+    string dir = "/stageData.db";
     IDbConnection db;
 
     string table = "StageData";
 
+    private void Awake()
+    {
+        int num = FindObjectsOfType<StageDB>().Length;
+        if (num != 1)
+        {
+            Destroy(this.gameObject);
+        } else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
     void Start()
     {
-        string connection = "URL=file:" + Application.streamingAssetsPath + dir;
+        string connection = "data source = " + Application.streamingAssetsPath + dir;
+        Debug.Log("data source = " + Application.streamingAssetsPath + dir);
         db = new SqliteConnection(connection);
 
         db.Open();

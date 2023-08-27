@@ -72,7 +72,7 @@ public class ComboSign : MonoBehaviour
             text.color = new Color(1, 0.7f, 0, 1);
             gameManager.score += 500;
         }
-        Debug.Log(text.color);
+
         transform.localScale = Vector3.one;
         transform.DOScale(new Vector2(1.1f, 1.1f), 0.1f);
 
