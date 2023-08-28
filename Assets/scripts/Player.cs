@@ -31,6 +31,28 @@ public class Player : MonoBehaviour
 
         return cols.Length > 0;
     }
+    public bool CheckIsChest()
+    {
+        var cols = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, -1, 0), 0.5f, LayerMask.GetMask("chest"));
+
+        if (cols.Length < 1) return false;
+
+        if (cols[0].GetComponent<Animator>().GetBool("open") == true) return false;
+
+        return cols.Length > 0;
+    }
+    public Animator getChest()
+    {
+        var cols = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, -1, 0), 0.5f, LayerMask.GetMask("chest"));
+
+        if (cols.Length < 1) return null;
+
+        var result = cols[0].GetComponent<Animator>();
+
+        if (result.GetBool("open") == true) return null;
+
+        return result;
+    }
     public void MoveMotion(bool direction)
     {
         animator.SetBool("moving", true);
@@ -58,7 +80,18 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((1 << collision.gameObject.layer) & LayerMask.GetMask("obstacle")) != 0)
+        if (collision.tag.Equals("coin"))
+        {
+            gameManager.soundManager.Play("effect.coin");
+            collision.gameObject.GetComponent<Animator>().SetBool("get", true);
+            Destroy(collision.gameObject, 0.5f);
+
+            obstacleSign.transform.position = transform.position + new Vector3(0.5f, 0);
+            obstacleSign.onSignGood(200);
+
+            gameManager.score += 200;
+        }
+        else if (((1 << collision.gameObject.layer) & LayerMask.GetMask("obstacle")) != 0)
         {
             if (transform.position.y - 1.5f > collision.transform.position.y) return;
 

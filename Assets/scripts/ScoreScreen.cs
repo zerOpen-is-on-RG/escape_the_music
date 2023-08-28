@@ -59,6 +59,7 @@ public class ScoreScreen : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         gameManager.soundManager.Play("music.score");
+        gameManager.soundManager._tracks[3].time = 0;
         yield return new WaitForSeconds(0.3f);
 
         scorePlayer.transform.localScale = Vector2.zero;

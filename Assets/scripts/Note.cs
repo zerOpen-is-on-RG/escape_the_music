@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DG.Tweening.Core.Easing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -67,6 +68,11 @@ public class Note : MonoBehaviour
             {
                 col = Color.white;
                 icon.color = new Color(0, 0, 0, 0);
+
+                if (_gameManager.player.CheckIsChest())
+                {
+                    col = Color.green;
+                }
             }
 
             if (transform.localPosition.y > _gameManager.activeLine)
@@ -149,6 +155,24 @@ public class Note : MonoBehaviour
 
         _gameManager.soundManager.Play("effect.tab");
         _gameManager.soundManager._tracks[1].time = 0.1f;
+
+        if (type.Equals("default"))
+        {
+            var chest = _gameManager.player.getChest();
+            if (chest != null)
+            {
+                chest.SetBool("open", true);
+                _gameManager.soundManager.Play("effect.chest");
+
+                Destroy(chest.gameObject, 1f);
+
+                _gameManager.player.obstacleSign.transform.position = _gameManager.player.transform.position + new Vector3(0.5f, 0.5f);
+                _gameManager.player.obstacleSign.onSignGood(1000);
+                _gameManager.collectedStars++;
+
+                _gameManager.score += 1000;
+            }
+        } 
 
         if (type.Equals("default") || type.Equals("up"))
         {

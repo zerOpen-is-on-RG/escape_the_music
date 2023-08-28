@@ -1,6 +1,10 @@
 using Mono.Data.Sqlite;
+using System.Collections;
 using System.Data;
 using UnityEngine;
+using UnityEngine.Networking;
+using System.IO;
+using System;
 
 public struct DataResult
 {
@@ -11,32 +15,65 @@ public struct DataResult
 public class StageDB : MonoBehaviour
 {
     string dir = "/stageData.db";
-    IDbConnection db;
+    public IDbConnection db;
 
     string table = "StageData";
 
     private void Awake()
     {
-        int num = FindObjectsOfType<StageDB>().Length;
-        if (num != 1)
+        StartCoroutine(DBCreate());
+    }
+    private void Start()
+    {
+        try
         {
-            Destroy(this.gameObject);
-        } else
+            db = new SqliteConnection(GetPath());
+            db.Open();
+        } catch (Exception e)
         {
-            DontDestroyOnLoad(this.gameObject);
+            Debug.Log(e);
         }
     }
 
-    void Start()
+    
+    IEnumerator DBCreate()
     {
-        string connection = "data source = " + Application.streamingAssetsPath + dir;
-        Debug.Log("data source = " + Application.streamingAssetsPath + dir);
-        db = new SqliteConnection(connection);
-
-        db.Open();
+        string filepath = string.Empty;
+        if (Application.platform == RuntimePlatform.Android) // SOS
+        {
+            filepath = Application.persistentDataPath + dir;
+            if (!File.Exists(filepath))
+            {
+                UnityWebRequest unityWebRequest = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets" + dir);
+                unityWebRequest.downloadedBytes.ToString();
+                yield return unityWebRequest.SendWebRequest().isDone;
+                File.WriteAllBytes(filepath, unityWebRequest.downloadHandler.data);
+            }
+        } else
+        {
+            filepath = Application.dataPath + dir;
+            if (!File.Exists(filepath))
+            {
+                File.Copy(Application.streamingAssetsPath + dir, filepath);
+            }
+        }
     }
 
-    public bool ResultIsNull(DataResult result)
+    public string GetPath()
+    {
+        string str = string.Empty;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            str = "data source = " + Application.persistentDataPath + dir;
+        } else
+        {
+            str = "data source = " + Application.dataPath + dir;
+        }
+
+        return str;
+    }
+
+public bool ResultIsNull(DataResult result)
     {
         if (result.name == null ||
             result.name.Length < 1) return false;
@@ -108,7 +145,6 @@ public class StageDB : MonoBehaviour
     {
         var command = db.CreateCommand();
         command.CommandText = "SELECT EXISTS (SELECT * FROM " + table + " WHERE name = '" + name + "')";
-        Debug.Log(command.CommandText);
 
         var data = command.ExecuteReader();
 
@@ -124,9 +160,11 @@ public class StageDB : MonoBehaviour
         return forReturn;
     }
 
-    private void OnApplicationQuit()
+    public void Close()
     {
-        if (db == null) return;
-        db.Close();
+        if (db.State == ConnectionState.Open)
+        {
+            this.db.Close();
+        }
     }
 }

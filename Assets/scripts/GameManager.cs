@@ -182,18 +182,18 @@ public class GameManager : MonoBehaviour
                 var before = db.GetDataByName(track._name);
                 if (db.HasData(track._name))
                 {
-                    if (!db.ResultIsNull(before))
+                    Debug.Log(before.score);
+                    if (before.score < score)
                     {
-                        if (before.score < score)
-                        {
-                            db.UpdateObjectData(track._name, score, collectedStars, track._name);
-                        }
+                        db.UpdateObjectData(track._name, score, collectedStars, track._name);
                     }
                 } else
                 {
                     db.InsertData(track._name, score, collectedStars);
                 }
 
+
+                db.Close();
                 scoreScreen.Display();
             }
         }

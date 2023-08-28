@@ -235,11 +235,25 @@ MonoBehaviour:
     loop: 1
   - id: effect.shot
     audioIn: {fileID: 0}
-    audio: {fileID: 8300000, guid: 69013d882bfc6144096f48c8e8c1433f, type: 3}
+    audio: {fileID: 8300000, guid: 825d6034d85ea6e49a1197a1ee82f0d1, type: 3}
     volume: 1
     pitch: 1
     track: 1
-    loop: 1
+    loop: 0
+  - id: effect.coin
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 825d6034d85ea6e49a1197a1ee82f0d1, type: 3}
+    volume: 0.8
+    pitch: 1
+    track: 1
+    loop: 0
+  - id: effect.chest
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 26b9e4cff0b21344782f416320a271d2, type: 3}
+    volume: 0.8
+    pitch: 1
+    track: 1
+    loop: 0
   _tracks:
   - {fileID: 7068803437641932033}
   - {fileID: 7068803437449951547}

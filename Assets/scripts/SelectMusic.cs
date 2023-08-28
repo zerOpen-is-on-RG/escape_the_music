@@ -40,9 +40,9 @@ public class SelectMusic : MonoBehaviour
         menu.soundManager.Play("effect.click");
         ui.rootVisualElement.Q<VisualElement>("selectMusicPanel").AddToClassList("selectMusicIn");
 
-        DataResult result = stageDB.GetDataByName(trackData.displayName);
+        DataResult result = stageDB.GetDataByName(trackData._name);
 
-        if (stageDB.ResultIsNull(result))
+        if (!stageDB.HasData(trackData._name))
         {
             result.name = trackData._name;
             result.score = 0;
@@ -56,13 +56,13 @@ public class SelectMusic : MonoBehaviour
         ui.rootVisualElement.Q<VisualElement>("musicBackground").style.backgroundImage = new StyleBackground(trackData.logoBackground);
 
         if (result.collectedStars < 1) ui.rootVisualElement.Q<VisualElement>("stars1").style.unityBackgroundImageTintColor = Color.gray;
-        else ui.rootVisualElement.Q<VisualElement>("star1").style.unityBackgroundImageTintColor = Color.yellow;
+        else ui.rootVisualElement.Q<VisualElement>("stars1").style.unityBackgroundImageTintColor = Color.yellow;
 
         if (result.collectedStars < 2) ui.rootVisualElement.Q<VisualElement>("stars2").style.unityBackgroundImageTintColor = Color.gray;
-        else ui.rootVisualElement.Q<VisualElement>("star1").style.unityBackgroundImageTintColor = Color.yellow;
+        else ui.rootVisualElement.Q<VisualElement>("stars2").style.unityBackgroundImageTintColor = Color.yellow;
 
         if (result.collectedStars < 3) ui.rootVisualElement.Q<VisualElement>("stars3").style.unityBackgroundImageTintColor = Color.gray;
-        else ui.rootVisualElement.Q<VisualElement>("star1").style.unityBackgroundImageTintColor = Color.yellow;
+        else ui.rootVisualElement.Q<VisualElement>("stars3").style.unityBackgroundImageTintColor = Color.yellow;
 
         if (result.collectedStars < 4) ui.rootVisualElement.Q<Label>("moreStar").text = "";
         else ui.rootVisualElement.Q<Label>("moreStar").text = "+" + (result.collectedStars - 3);
@@ -83,6 +83,7 @@ public class SelectMusic : MonoBehaviour
 
     void Select(ClickEvent ev)
     {
+        stageDB.Close();
         SceneManager.LoadScene("GameScreen");
     }
 }
