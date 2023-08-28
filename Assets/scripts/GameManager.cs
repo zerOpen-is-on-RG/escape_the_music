@@ -19,18 +19,35 @@ public class GameManager : MonoBehaviour
     public Vcam vcam;
     public ComboSign comboSign;
     public Text scoreIndicator;
+    public ScoreScreen scoreScreen;
 
     public TrackData track;
 
-    public int score;
+    [HideInInspector]
+    public int score = 0;
+    [HideInInspector]
     public int combo = 0;
+    [HideInInspector]
+    public int maxCombo = 0;
+    [HideInInspector]
+    public int perfect = 0;
+    [HideInInspector]
+    public int great = 0;
+    [HideInInspector]
+    public int good = 0;
+    [HideInInspector]
+    public int notbad = 0;
+    [HideInInspector]
+    public int miss = 0;
+    [HideInInspector]
+    public int collectedStars = 0;
 
     float autoScore = 0;
 
     [HideInInspector]
     public List<Note> notes;
 
-    public int activeLine = 0;//-134;
+    public int activeLine = -60;//-134;
 
     public Text title;
 
@@ -47,9 +64,12 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
+        collectedStars = 2;
+
         track = Instantiate(trackSet.FindByName(PlayerPrefs.GetString("selectedMusic")));
         track.transform.SetParent(screen.transform, false);
         track.transform.localPosition = new Vector3(10, 2, 0);
+
         if (track != null)
         {
             StartCoroutine(_start());
@@ -133,7 +153,7 @@ public class GameManager : MonoBehaviour
                 _note.type = pattern.noteType;
 
                 _note.transform.position = new Vector2(pattern.x, 0);
-                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 834);
+                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 774);
                 _note.speed = track.pattern.patternSpeed;
 
                 notes.Add(_note);
@@ -143,15 +163,39 @@ public class GameManager : MonoBehaviour
 
             autoScore += Time.deltaTime;
 
-            if (autoScore > 1)
+            if (autoScore > 1/7)
             {
                 autoScore = 0;
-                score += 7;
+                score += 1;
             }
 
             track.effect.EffectUpdate(timeline);
 
             scoreIndicator.text = score.ToString();
+
+            if (timeline > track.trackTime)
+            {
+                isPlaying = false;
+                detecting = false;
+
+                StageDB db = GameObject.Find("stageDB").GetComponent<StageDB>();
+                var before = db.GetDataByName(track._name);
+                if (db.HasData(track._name))
+                {
+                    if (!db.ResultIsNull(before))
+                    {
+                        if (before.score < score)
+                        {
+                            db.UpdateObjectData(track._name, score, collectedStars, track._name);
+                        }
+                    }
+                } else
+                {
+                    db.InsertData(track._name, score, collectedStars);
+                }
+
+                scoreScreen.Display();
+            }
         }
     }
 

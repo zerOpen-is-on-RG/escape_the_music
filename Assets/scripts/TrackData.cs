@@ -13,6 +13,7 @@ public class TrackData : MonoBehaviour
     public Sprite logoBackground;
 
     public string music;
+    public int trackTime;
     public TrackEffectBase effect;
 
     [HideInInspector]

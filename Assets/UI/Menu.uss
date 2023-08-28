@@ -31,7 +31,7 @@
 }
 
 .easyButton:active {
-    background-color: rgba(0, 197, 43, 255);
+    background-color: rgb(0, 197, 43);
 }
 
 .normalButton {
@@ -52,7 +52,7 @@
 }
 
 .normalButton:active {
-    background-color: rgba(176, 204, 0, 255);
+    background-color: rgb(176, 204, 0);
 }
 
 .hardButton {
@@ -72,5 +72,49 @@
 }
 
 .hardButton:active {
-    background-color: rgba(183, 7, 0, 255);
+    background-color: rgb(183, 7, 0);
+}
+
+.selectMusicOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -150%;
+    transition-duration: 0.2s;
+    opacity: 0;
+}
+
+.selectMusicIn {
+    translate: 0 150%;
+    opacity: 1;
+    transition-duration: 0.2s;
+}
+
+.exitButton {
+    position: absolute;
+    height: 68px;
+    width: 135px;
+    top: 10px;
+    left: 20px;
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/fonts/CookieRun%20Black.otf?fileID=12800000&guid=dcceb1097e0f67d45976663a4bbd53c0&type=3#CookieRun Black');
+    -unity-font-style: bold;
+    font-size: 71px;
+    color: rgba(255, 255, 255, 255);
+    border-left-color: rgb(36, 36, 36);
+    border-right-color: rgb(36, 36, 36);
+    border-top-color: rgb(36, 36, 36);
+    border-bottom-color: rgb(36, 36, 36);
+    background-color: rgba(22, 22, 22, 255);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    rotate: 5deg;
+    transition-duration: 0.2s;
+}
+
+.exitButton:hover {
+    background-color: rgba(43, 43, 43, 255);
+    scale: 1.05 1.05;
 }

@@ -7,7 +7,6 @@ public struct DataResult
     public string name;
     public int score;
     public int collectedStars;
-    public int difficulty;
 }
 public class StageDB : MonoBehaviour
 {
@@ -59,7 +58,6 @@ public class StageDB : MonoBehaviour
             result.name = data.GetString(0);
             result.score = data.GetInt32(1);
             result.collectedStars = data.GetInt32(2);
-            result.difficulty = data.GetInt32(3);
         }
 
         data.Close();
@@ -67,11 +65,11 @@ public class StageDB : MonoBehaviour
         return result;
     }
 
-    public void UpdateObjectData(string name, int score, int collectedStars, int difficulty, string whereName)
+    public void UpdateObjectData(string name, int score, int collectedStars, string whereName)
     {
         var command = db.CreateCommand();
         command.CommandText =
-            "UPDATE " + table + " SET name = '" + name + "', score = " + score + ", collectedStars = " + collectedStars + ", difficulty = " + difficulty + " WHERE name = '" + whereName + "'";
+            "UPDATE " + table + " SET name = '" + name + "', score = " + score + ", collectedStars = " + collectedStars + " WHERE name = '" + whereName + "'";
 
         command.ExecuteNonQuery();
         command.Dispose();
@@ -81,7 +79,7 @@ public class StageDB : MonoBehaviour
     {
         var command = db.CreateCommand();
         command.CommandText =
-            "UPDATE " + table + " SET " + key + " = '" + value + "', WHERE name = '" + whereName + "'";
+            "UPDATE " + table + " SET " + key + " = '" + value + "' WHERE name = '" + whereName + "'";
 
         command.ExecuteNonQuery();
         command.Dispose();
@@ -91,17 +89,17 @@ public class StageDB : MonoBehaviour
     {
         var command = db.CreateCommand();
         command.CommandText =
-            "UPDATE " + table + " SET " + key + " = '" + value + "', WHERE name = '" + whereName + "'";
+            "UPDATE " + table + " SET " + key + " = '" + value + "' WHERE name = '" + whereName + "'";
 
         command.ExecuteNonQuery();
         command.Dispose();
     }
 
-    public void InsertData(string name, int score, int collectedStars, int difficulty)
+    public void InsertData(string name, int score, int collectedStars)
     {
         var command = db.CreateCommand();
         command.CommandText =
-            "INSERT INTO " + table + " (name, score, collectedStars, difficulty) VALUES ('" + name + "', " + score + ", " + collectedStars + ", " + difficulty + ")";
+            "INSERT INTO " + table + " (name, score, collectedStars) VALUES ('" + name + "', " + score + ", " + collectedStars + ")";
         command.ExecuteNonQuery();
         command.Dispose();
     }
@@ -109,7 +107,8 @@ public class StageDB : MonoBehaviour
     public bool HasData(string name)
     {
         var command = db.CreateCommand();
-        command.CommandText = "SELECT EXISTS (SELECT * FROM " + table + " WHERE '" + name + "'";
+        command.CommandText = "SELECT EXISTS (SELECT * FROM " + table + " WHERE name = '" + name + "')";
+        Debug.Log(command.CommandText);
 
         var data = command.ExecuteReader();
 
@@ -127,6 +126,7 @@ public class StageDB : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        if (db == null) return;
         db.Close();
     }
 }

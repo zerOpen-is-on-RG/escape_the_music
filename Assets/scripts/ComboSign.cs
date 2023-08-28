@@ -12,7 +12,7 @@ public class ComboSign : MonoBehaviour
     public Text indicator;
 
     bool combing = false;
-    private void Start()
+    private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         text = GetComponent<Text>();
@@ -57,7 +57,7 @@ public class ComboSign : MonoBehaviour
         else if (type == 1)
         {
             text.text = "GOOD";
-            text.color = Color.yellow;
+            text.color = Color.blue;
             gameManager.score += 200;
         }
         else if (type == 2)

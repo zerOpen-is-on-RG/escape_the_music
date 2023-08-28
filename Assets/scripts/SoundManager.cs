@@ -11,12 +11,12 @@ public class SoundManager : MonoBehaviour
 
     public string PlayingMusic;
 
-    public void Play(string musicId)
+    public void Play(string musicId, bool echo = false)
     {
         Sound sound = Array.Find(Sounds, v => v.id == musicId);
         if (sound == null) return;
 
-        StartCoroutine(OnPlay(sound));
+        StartCoroutine(OnPlay(sound, echo));
     }
 
     public void Stop(int track)
@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour
         if (_tracks[track - 1]) _tracks[track - 1].UnPause();
     }
 
-    public IEnumerator OnPlay(Sound sound)
+    public IEnumerator OnPlay(Sound sound, bool echo)
     {
         if (sound.track == 4)
         {
@@ -43,6 +43,8 @@ public class SoundManager : MonoBehaviour
             else PlayingMusic = sound.id;
         }
         AudioSource _audio = _tracks[sound.track - 1];
+
+        if (echo) _audio = _tracks[4];
 
         if (sound.audioIn)
         {

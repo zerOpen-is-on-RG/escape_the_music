@@ -141,6 +141,7 @@ public class Note : MonoBehaviour
             Destory_();
 
             _gameManager.combo = 0;
+            _gameManager.miss++;
             _gameManager.comboSign.OnCombo(-1);
 
             return;
@@ -197,23 +198,29 @@ public class Note : MonoBehaviour
 
         //eff.transform.DORotate(new Vector3(0, 0, Random.Range(-20f, 20f)), 0.15f);
         _gameManager.combo++;
+        _gameManager.score += _gameManager.combo;
 
         eff.transform.DOScale(new Vector3(2, 0.7f), 0.15f);
 
         if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 150)
         {
             _gameManager.comboSign.OnCombo(3);
+            _gameManager.perfect++;
         } else if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 200)
         {
             _gameManager.comboSign.OnCombo(2);
+            _gameManager.good++;
         }
         else if (Mathf.Abs(transform.localPosition.y - _gameManager.activeLine) <= 250)
         {
             _gameManager.comboSign.OnCombo(1);
+            _gameManager.notbad++;
         }
         else
         {
             _gameManager.comboSign.OnCombo(0);
+            _gameManager.combo = 0;
+            _gameManager.miss++;
         }
 
         Destory_();
