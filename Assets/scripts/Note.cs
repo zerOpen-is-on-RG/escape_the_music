@@ -139,6 +139,7 @@ public class Note : MonoBehaviour
             {
                 Destory_();
 
+                _gameManager.miss++;
                 _gameManager.combo = 0;
                 _gameManager.comboSign.OnCombo(-1);
             }

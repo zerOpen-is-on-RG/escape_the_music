@@ -43,6 +43,8 @@ public class ESC_command : MonoBehaviour
         // if Countdowning
         if (countdownActive)
         {
+            isPaused = false;
+
             countdownTimer -= Time.unscaledDeltaTime;
             int countdownValue = Mathf.CeilToInt(countdownTimer);
             countdownText.text = countdownValue.ToString();
@@ -56,6 +58,8 @@ public class ESC_command : MonoBehaviour
                 countdownActive = false;
                 SetButtonsInteractable(true); // Button Active True
                 AudioListener.pause = false; // Sound Play
+
+                isPaused = false;
             }
         }
     }
