@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
             obstacleSign.onSignGood(200);
 
             gameManager.score += 200;
+            gameManager.collectedCoins++;
         }
         else if (((1 << collision.gameObject.layer) & LayerMask.GetMask("obstacle")) != 0)
         {

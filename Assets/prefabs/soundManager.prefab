@@ -235,7 +235,7 @@ MonoBehaviour:
     loop: 1
   - id: effect.shot
     audioIn: {fileID: 0}
-    audio: {fileID: 8300000, guid: 825d6034d85ea6e49a1197a1ee82f0d1, type: 3}
+    audio: {fileID: 8300000, guid: 69013d882bfc6144096f48c8e8c1433f, type: 3}
     volume: 1
     pitch: 1
     track: 1

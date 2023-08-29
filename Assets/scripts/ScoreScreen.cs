@@ -16,6 +16,7 @@ public class ScoreScreen : MonoBehaviour
     public Text trackName;
     public Text trackDifficulty;
     public Text score;
+    public Text maxCombo;
     public Text collectedStars;
     public Text collectedCoins;
     public Text perfect;
@@ -35,12 +36,20 @@ public class ScoreScreen : MonoBehaviour
         trackName.text = gameManager.track.displayName.ToString();
         trackDifficulty.text = "normal";
         score.text = "점수:                 " + gameManager.score.ToString();
+        maxCombo.text = "최대 콤보:         " + gameManager.maxCombo.ToString();
+        collectedStars.text = "수집한 상자:      " + gameManager.collectedStars.ToString();
+        collectedCoins.text = "수집한 코인:      " + gameManager.collectedCoins.ToString();
         perfect.text = "perfect:          " + gameManager.perfect.ToString();
         great.text = "great:              " + gameManager.great.ToString();
         good.text = "good:               " + gameManager.good.ToString();
         notbad.text = "not bad:          " + gameManager.notbad.ToString();
         miss.text = "miss:                " + gameManager.miss.ToString();
         moreStars.text = "";
+
+        if (gameManager.collectedStars > 3)
+        {
+            moreStars.text = "+" + (gameManager.collectedStars - 3);
+        }
 
         stars.ForEach((v) => {
             var color = v.color;
@@ -56,6 +65,7 @@ public class ScoreScreen : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         gameManager.screen.transform.DOScale(Vector2.zero, 0.1f);
         gameManager.tv.transform.DOScale(Vector2.zero, 0.1f);
+        gameManager.comboSign.transform.DOScale(Vector2.zero, 0.1f);
         yield return new WaitForSeconds(1f);
 
         gameManager.soundManager.Play("music.score");

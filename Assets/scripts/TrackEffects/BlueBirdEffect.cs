@@ -149,7 +149,7 @@ public class BlueBirdEffect : TrackEffectBase
 
         if (timeline >= 68 && timeline <= 69) gameManager.detecting = true;
 
-        if (timeline >= 68)
+        if (timeline >= 68 && timeline < 78)
         {
             var pattern = gameManager.track.pattern.patterns.Find((v) => gameManager.track.MathperfectTime(v).Equals(Mathf.Floor(timeline * 10) / 10) && !spawnedObjects.Contains(v.timeline));
 
@@ -157,10 +157,7 @@ public class BlueBirdEffect : TrackEffectBase
             {
                 spawnedObjects.Add(pattern.timeline);
 
-                int i = UnityEngine.Random.Range(0, obstacles.Length);
-                if (i < 0) i = 0;
-
-                var obstacle = Instantiate(obstacles[i]);
+                var obstacle = Instantiate(obstacles[0]);
                 obstacle.transform.SetParent(map.transform);
                 obstacle.transform.localPosition = new Vector2(-85.83f, -4.01f);
 
@@ -171,6 +168,59 @@ public class BlueBirdEffect : TrackEffectBase
                 float a = 2 - 0.05f * gameManager.track.pattern.patternSpeed + 0.25f;
                 v.transform.localPosition = new Vector2(v.transform.localPosition.x + (Time.deltaTime * 10.1f / a), v.transform.localPosition.y);
             });
+        }
+
+        if (timeline > 78 && timeline < 79 && !state.Equals("78P"))
+        {
+            state = "78P";
+            map.transform.localPosition = new Vector2(80, -15);
+            gameManager.vcam.noise.m_AmplitudeGain = 2;
+
+            motioning = "A";
+            backMotion = true;
+
+            foreach (Transform child in background.transform)
+            {
+                child.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+
+        }
+
+        if (timeline >= 78 && timeline <= 99)
+        {
+            var pattern = gameManager.track.pattern.patterns.Find((v) => gameManager.track.MathperfectTime(v).Equals(Mathf.Floor(timeline * 10) / 10) && !spawnedObjects.Contains(v.timeline));
+
+            if (pattern != null && pattern.noteType != "default")
+            {
+                spawnedObjects.Add(pattern.timeline);
+
+                int i = UnityEngine.Random.Range(0, obstacles.Length);
+                if (i < 0) i = 0;
+
+                var obstacle = Instantiate(obstacles[1]);
+                obstacle.transform.SetParent(map.transform);
+                obstacle.transform.localPosition = new Vector2(-85.83f, 11.01f);
+
+                objects.Add(obstacle);
+            }
+
+            objects.ForEach(v => {
+                float a = 2 - 0.05f * gameManager.track.pattern.patternSpeed + 0.25f;
+                v.transform.localPosition = new Vector2(v.transform.localPosition.x + (Time.deltaTime * 10.1f / a), v.transform.localPosition.y);
+            });
+        }
+
+        if (timeline > 99.5f && timeline < 100 && !state.Equals("99.5T"))
+        {
+            state = "99.5T";
+            map.transform.localPosition = new Vector2(109, 0);
+            gameManager.vcam.noise.m_AmplitudeGain = 0;
+
+            foreach (Transform child in background.transform)
+            {
+                child.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+
         }
 
         map.color = col;

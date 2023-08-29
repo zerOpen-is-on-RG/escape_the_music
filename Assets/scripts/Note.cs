@@ -42,6 +42,20 @@ public class Note : MonoBehaviour
         {
             Color col = img.color;
 
+            if (type.Equals("double"))
+            {
+                type = "default";
+                var two = Instantiate(_gameManager.note);
+                two.transform.SetParent(_gameManager.noteLine.transform, false);
+
+                two.transform.localPosition = new Vector2(-transform.localPosition.x, transform.localPosition.y);
+
+                two.type = "default";
+                two.speed = speed;
+
+                _gameManager.notes.Add(two);
+            }
+
             if (type.Equals("up"))
             {
                 col = new Color(0, 206, 255);
@@ -247,6 +261,10 @@ public class Note : MonoBehaviour
             _gameManager.miss++;
         }
 
+        if (_gameManager.combo > _gameManager.maxCombo)
+        {
+            _gameManager.maxCombo = _gameManager.combo;
+        }
         Destory_();
     }
 }

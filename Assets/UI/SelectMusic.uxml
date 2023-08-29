@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Menu.uss?fileID=7433441132597879392&amp;guid=356e006b53d383145a8825f24eee0daf&amp;type=3#Menu" />
-    <ui:VisualElement name="selectMusicPanel" class="selectMusicOut">
+    <ui:VisualElement name="selectMusicPanel" class="selectMusicOut selectMusicIn">
         <ui:Button name="musicBackground" class="MusicPanel" />
         <ui:Label text="배경을 눌러서 시작하세요" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(255, 218, 0); font-size: 30px; -unity-text-align: upper-center; top: 0; left: 847px; width: 1082px; position: absolute; background-color: rgba(0, 0, 0, 0.48);" />
         <ui:VisualElement style="position: absolute; height: 200%; background-color: rgb(26, 26, 26); width: 60%; top: -720px; left: -328px; rotate: 20deg;" />
@@ -23,8 +23,8 @@
                 <ui:Label text="+1" display-tooltip-when-elided="true" name="moreStar" style="position: absolute; height: 65px; width: 66px; color: rgb(200, 200, 200); -unity-font-style: normal; -unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; font-size: 39px; rotate: -45deg; top: 218px; left: 148px; -unity-text-align: middle-center; text-shadow: 3px 3px 3px rgb(75, 75, 75);" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; height: 152px; width: 854px; background-color: rgb(255, 255, 255); top: 78%; left: 1067px; border-top-left-radius: 8px;">
-            <ui:Label text="Blue Bird" display-tooltip-when-elided="true" name="musicName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(5, 5, 5); font-size: 80px; -unity-text-align: upper-left; top: 15%; left: 5%; width: 794px;" />
+        <ui:VisualElement style="position: absolute; height: 152px; width: 1654px; background-color: rgb(255, 255, 255); top: 78%; left: 1067px; border-top-left-radius: 8px;">
+            <ui:Label text="Blue Bird" display-tooltip-when-elided="true" name="musicName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(5, 5, 5); font-size: 80px; -unity-text-align: upper-left; top: 15%; left: 1%; width: 794px;" />
             <ui:VisualElement name="easyButton" class="easyButton" style="display: none;">
                 <ui:Label text="easy" display-tooltip-when-elided="true" name="musicName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(5, 5, 5); font-size: 35px; -unity-text-align: upper-center; top: 15%; left: 5%; width: 164px; height: 50px;" />
             </ui:VisualElement>
@@ -34,8 +34,8 @@
             <ui:VisualElement name="hardButton" class="hardButton" style="display: none;">
                 <ui:Label text="hard" display-tooltip-when-elided="true" name="musicName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(5, 5, 5); font-size: 35px; -unity-text-align: upper-center; top: 15%; left: 5%; width: 164px; height: 50px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="position: absolute; height: 53px; width: 800px; background-color: rgb(10, 10, 10); top: 152px; left: 55px;">
-                <ui:Label text="Naruto Shippuden" display-tooltip-when-elided="true" name="authorName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(255, 255, 255); font-size: 27px; -unity-text-align: upper-left; top: 0; width: 794px; left: 3%;" />
+            <ui:VisualElement name="VisualElement" style="position: absolute; height: 53px; width: 1594px; background-color: rgb(10, 10, 10); top: 152px; left: 55px;">
+                <ui:Label text="Naruto Shippuden" display-tooltip-when-elided="true" name="authorName" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(255, 255, 255); font-size: 27px; -unity-text-align: upper-left; top: 0; width: 794px; left: 1%;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:Button text="&lt;-" display-tooltip-when-elided="true" name="exitButton" class="exitButton" />
