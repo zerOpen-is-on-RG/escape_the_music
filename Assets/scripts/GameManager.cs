@@ -229,12 +229,28 @@ public class GameManager : MonoBehaviour
     }
     public void Moveleft(float distance)
     {
-        player.transform.DOMove(new Vector2(player.transform.position.x - distance, player.transform.position.y), 0.2f);
+        Debug.Log(player.transform.position.x-distance);
+        if(player.transform.position.x <= -6.0f)
+        {
+            player.transform.DOMove(new Vector2(-6.0f, player.transform.position.y), 0.2f);
+        }
+        else
+        {
+            player.transform.DOMove(new Vector2(player.transform.position.x - distance, player.transform.position.y), 0.2f);
+        }
         player.MoveMotion(true);
     }
     public void MoveRight(float distance)
     {
-        player.transform.DOMove(new Vector2(player.transform.position.x + distance, player.transform.position.y), 0.2f);
+        Debug.Log(player.transform.position.x+distance);
+        if(player.transform.position.x+distance>=6.3f)
+        {
+            player.transform.DOMove(new Vector2(6.3f, player.transform.position.y), 0.2f);
+        }
+        else
+        {
+            player.transform.DOMove(new Vector2(player.transform.position.x + distance, player.transform.position.y), 0.2f);
+        }
         player.MoveMotion(false);
     }
 }
