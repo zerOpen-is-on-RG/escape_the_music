@@ -229,7 +229,7 @@ MonoBehaviour:
   - id: music.score
     audioIn: {fileID: 0}
     audio: {fileID: 8300000, guid: fcc67ab062a217d44a73371ee4e7d8bb, type: 3}
-    volume: 1
+    volume: 0.9
     pitch: 1
     track: 4
     loop: 1
@@ -254,6 +254,20 @@ MonoBehaviour:
     pitch: 1
     track: 1
     loop: 0
+  - id: effect.bum
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: d0c0af26968043243b2cdc5de43144ad, type: 3}
+    volume: 1
+    pitch: 0.8
+    track: 3
+    loop: 0
+  - id: effect.bum2
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: d0c0af26968043243b2cdc5de43144ad, type: 3}
+    volume: 1
+    pitch: 1
+    track: 1
+    loop: 1
   _tracks:
   - {fileID: 7068803437641932033}
   - {fileID: 7068803437449951547}

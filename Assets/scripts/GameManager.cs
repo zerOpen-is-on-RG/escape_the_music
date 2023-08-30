@@ -177,16 +177,27 @@ public class GameManager : MonoBehaviour
             {
                 isPlaying = false;
                 detecting = false;
+                bool best = false;
 
                 StageDB db = GameObject.Find("stageDB").GetComponent<StageDB>();
                 var before = db.GetDataByName(track._name);
                 if (db.HasData(track._name))
                 {
-                    Debug.Log(before.score);
+                    var score_ = before.score;
+                    var stars = before.collectedStars;
+
                     if (before.score < score)
                     {
-                        db.UpdateObjectData(track._name, score, collectedStars, track._name);
+                        score_ = score;
+                        best = true;
                     }
+
+                    if (before.collectedStars < collectedStars)
+                    {
+                        stars = collectedStars;
+                    }
+
+                    db.UpdateObjectData(track._name, score_, stars, track._name);
                 } else
                 {
                     db.InsertData(track._name, score, collectedStars);
@@ -194,7 +205,7 @@ public class GameManager : MonoBehaviour
 
 
                 db.Close();
-                scoreScreen.Display();
+                scoreScreen.Display(best);
             }
         }
     }
@@ -229,12 +240,28 @@ public class GameManager : MonoBehaviour
     }
     public void Moveleft(float distance)
     {
-        player.transform.DOMove(new Vector2(player.transform.position.x - distance, player.transform.position.y), 0.2f);
+        Debug.Log(player.transform.position.x-distance);
+        if(player.transform.position.x <= -6.0f)
+        {
+            player.transform.DOMove(new Vector2(-6.0f, player.transform.position.y), 0.2f);
+        }
+        else
+        {
+            player.transform.DOMove(new Vector2(player.transform.position.x - distance, player.transform.position.y), 0.2f);
+        }
         player.MoveMotion(true);
     }
     public void MoveRight(float distance)
     {
-        player.transform.DOMove(new Vector2(player.transform.position.x + distance, player.transform.position.y), 0.2f);
+        Debug.Log(player.transform.position.x+distance);
+        if(player.transform.position.x+distance>=6.3f)
+        {
+            player.transform.DOMove(new Vector2(6.3f, player.transform.position.y), 0.2f);
+        }
+        else
+        {
+            player.transform.DOMove(new Vector2(player.transform.position.x + distance, player.transform.position.y), 0.2f);
+        }
         player.MoveMotion(false);
     }
 }

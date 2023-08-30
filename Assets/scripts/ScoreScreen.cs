@@ -25,9 +25,11 @@ public class ScoreScreen : MonoBehaviour
     public Text notbad;
     public Text miss;
     public Text moreStars;
+    public List<Text> bests;
     public GameObject dataPanel;
+    public GameObject cutline;
 
-    public void Display()
+    public void Display(bool best)
     {
         gameObject.SetActive(true);
         scorePlayer.transform.localPosition = new Vector2(0, -1500);
@@ -57,12 +59,13 @@ public class ScoreScreen : MonoBehaviour
             v.color = color;
         });
 
-        StartCoroutine(_display());
+        StartCoroutine(_display(best));
     }
-    IEnumerator _display()
+    IEnumerator _display(bool best)
     {
         gameManager.soundManager.Play("effect.shot");
         yield return new WaitForSeconds(0.2f);
+        cutline.transform.DOScale(Vector2.zero, 0.1f);
         gameManager.screen.transform.DOScale(Vector2.zero, 0.1f);
         gameManager.tv.transform.DOScale(Vector2.zero, 0.1f);
         gameManager.comboSign.transform.DOScale(Vector2.zero, 0.1f);
@@ -102,6 +105,26 @@ public class ScoreScreen : MonoBehaviour
             } else
             {
                 StartCoroutine(shootStar(v, false));
+            }
+
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        if (!best) yield break;
+        gameManager.soundManager.Play("effect.bum", true);
+        gameManager.soundManager.Play("effect.bum", false);
+        gameManager.soundManager.Play("effect.bum2", false);
+
+        yield return new WaitForSeconds(0.5f);
+
+        for (int i = 0; i < bests.Count; i++)
+        {
+            var v = bests[i];
+            if (v != null)
+            {
+                v.gameObject.SetActive(true);
+                v.transform.localScale = Vector2.zero;
+                v.transform.DOScale(Vector2.one, 0.2f);
             }
 
             yield return new WaitForSeconds(0.25f);
