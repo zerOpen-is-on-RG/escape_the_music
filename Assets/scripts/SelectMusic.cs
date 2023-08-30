@@ -18,6 +18,29 @@ public class SelectMusic : MonoBehaviour
 
         ui.rootVisualElement.Q<Button>("musicBackground").RegisterCallback<ClickEvent>(Select);
         ui.rootVisualElement.Q<Button>("exitButton").RegisterCallback<ClickEvent>(CloseMusic);
+    }
+
+    public void Fade()
+    {
+        StartCoroutine(_fade());
+    }
+
+    IEnumerator _fade()
+    {
+        var fade = ui.rootVisualElement.Q<VisualElement>("fade");
+        fade.style.display = DisplayStyle.Flex;
+
+        yield return new WaitForSeconds(0.2f);
+        fade.AddToClassList("fadeOut");
+
+        yield return new WaitForSeconds(0.4f);
+        fade.style.display = DisplayStyle.None;
+        fade.RemoveFromClassList("fadeOut");
+    }
+
+    public void DisplayMusic()
+    {
+        Fade();
 
         string nam = PlayerPrefs.GetString("selectedMusic");
         var f = trackSet.FindByName(nam);
@@ -27,16 +50,12 @@ public class SelectMusic : MonoBehaviour
             PlayerPrefs.SetString("selectedMusic", trackSet.trackData[0]._name);
 
             trackData = trackSet.trackData[0];
-        } else
+        }
+        else
         {
             trackData = f;
         }
 
-        Debug.Log(trackData.displayName);
-    }
-
-    public void DisplayMusic()
-    {
         menu.soundManager.Play("effect.click");
         ui.rootVisualElement.Q<VisualElement>("selectMusicPanel").AddToClassList("selectMusicIn");
 
@@ -49,6 +68,7 @@ public class SelectMusic : MonoBehaviour
             result.collectedStars = 0;
         }
 
+        ui.rootVisualElement.Q<Label>("nowTopic").text = trackData.displayName;
         ui.rootVisualElement.Q<Label>("musicName").text = trackData.displayName;
         ui.rootVisualElement.Q<Label>("authorName").text = trackData.author;
         ui.rootVisualElement.Q<Label>("score").text = result.score.ToString();
@@ -70,7 +90,60 @@ public class SelectMusic : MonoBehaviour
         menu.soundManager.Stop(4);
         menu.soundManager.Play(trackData.music, true);
 
+        int i = trackSet.IndexByName(trackData._name);
 
+        TrackData next = trackSet.FindByIndex(i + 1);
+        TrackData before = trackSet.FindByIndex(i - 1);
+
+        if (next != null)
+        {
+            ui.rootVisualElement.Q<Label>("upSign").style.display = DisplayStyle.Flex;
+            ui.rootVisualElement.Q<Label>("topTopic").style.display = DisplayStyle.Flex;
+            ui.rootVisualElement.Q<Label>("topTopic").text = next.displayName;
+        } else
+        {
+            ui.rootVisualElement.Q<Label>("upSign").style.display = DisplayStyle.None;
+            ui.rootVisualElement.Q<Label>("topTopic").style.display = DisplayStyle.None;
+        }
+
+        if (before != null)
+        {
+            ui.rootVisualElement.Q<Label>("downSign").style.display = DisplayStyle.Flex;
+            ui.rootVisualElement.Q<Label>("bottomTopic").style.display = DisplayStyle.Flex;
+            ui.rootVisualElement.Q<Label>("bottomTopic").text = before.displayName;
+        } else
+        {
+            ui.rootVisualElement.Q<Label>("downSign").style.display = DisplayStyle.None;
+            ui.rootVisualElement.Q<Label>("bottomTopic").style.display = DisplayStyle.None;
+        }
+
+        ui.rootVisualElement.Q<Button>("nextButton").RegisterCallback<ClickEvent>(UpMusic);
+        ui.rootVisualElement.Q<Button>("prevButton").RegisterCallback<ClickEvent>(DownMusic);
+    }
+
+    public void UpMusic(ClickEvent ev) {
+        int i = trackSet.IndexByName(trackData._name);
+
+        TrackData next = trackSet.FindByIndex(i + 1);
+        Debug.Log(next);
+
+        if (next == null) return;
+
+        PlayerPrefs.SetString("selectedMusic", next._name);
+
+        DisplayMusic();
+    }
+
+    public void DownMusic(ClickEvent ev)
+    {
+        int i = trackSet.IndexByName(trackData._name);
+
+        TrackData next = trackSet.FindByIndex(i - 1);
+        if (next == null) return;
+
+        PlayerPrefs.SetString("selectedMusic", next._name);
+
+        DisplayMusic();
     }
 
     void CloseMusic(ClickEvent ev)

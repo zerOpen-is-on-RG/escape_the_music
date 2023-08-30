@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackPattern : MonoBehaviour
 {
-    public int patternSpeed = 20;
+    public int patternSpeed = 25;
 
     public bool clearPattern = false;
     public List<Pattern> patterns;
