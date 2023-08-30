@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<Note> notes;
 
-    public int activeLine = -160;//-134;
+    public int activeLine = -50;//-134;
 
     public Text title;
 
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
                 _note.type = pattern.noteType;
 
                 _note.transform.position = new Vector2(pattern.x, 0);
-                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 674);
+                _note.transform.localPosition = new Vector2(_note.transform.localPosition.x, 784);
                 _note.speed = track.pattern.patternSpeed;
 
                 notes.Add(_note);
