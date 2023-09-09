@@ -801,6 +801,8 @@ MonoBehaviour:
   note: {fileID: 8010166949077817953, guid: 3bd8b9091924d1b4cb345a1069001dfb, type: 3}
   trackingParticle: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   blur: {fileID: 266545781}
+  effect1: {fileID: 454177726}
+  effect2: {fileID: 1639532322}
   screen: {fileID: 651955802}
   tv: {fileID: 1475363555}
   trackSet: {fileID: 3186547824713010370, guid: 722536f1d1722f04aa95e90519e58d02, type: 3}
@@ -1425,6 +1427,192 @@ MonoBehaviour:
   m_EffectColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   m_EffectDistance: {x: 6.04, y: 2.28}
   m_UseGraphicAlpha: 1
+--- !u!1 &454177726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454177728}
+  - component: {fileID: 454177727}
+  m_Layer: 0
+  m_Name: Screen Effect [Screen Vignette and Blink]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &454177727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454177726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7731e18125717ec48bf79d880784ea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 493720226}
+  priority: 0
+  stopAction: 0
+  useTargetFPS: 1
+  targetFPS: 60
+  isTimeModeSeconds: 1
+  durationSeconds: 0
+  durationFrame: 0
+  animPlaySpeed: 0.64
+  affectedByTimescale: 1
+  __optionFoldout1: 1
+  __optionFoldout2: 1
+  __matPropListFoldout: 1
+  __propCount: 6
+  __durationChangeActionPopupIndex: 0
+  __materialDefaultValues:
+  - time: 0
+    frame: 0
+    floatValue: 24
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 24, g: 0, b: 0, a: 0}
+    vector4: {x: 24, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    vector4: {x: 0, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 1, g: 0, b: 0, a: 0}
+    vector4: {x: 1, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 1, g: 0, b: 0, a: 0}
+    vector4: {x: 1, y: 0, z: 0, w: 0}
+  __materialCurrentValues:
+  - time: 0
+    frame: 0
+    floatValue: 24
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 24, g: 0, b: 0, a: 0}
+    vector4: {x: 24, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0
+    range: {x: 0, y: 1}
+    min: 0
+    max: 1
+    color: {r: 0, g: 0, b: 1, a: 0}
+    vector4: {x: 0, y: 0, z: 1, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 1}
+    min: 0
+    max: 1
+    color: {r: 1, g: 0, b: 1, a: 0}
+    vector4: {x: 1, y: 0, z: 1, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 2}
+    min: 0
+    max: 2
+    color: {r: 1, g: 0, b: 2, a: 0}
+    vector4: {x: 1, y: 0, z: 2, w: 0}
+  matPropertyList:
+  - material: {fileID: 493720226}
+    propName: _BlinkBase
+    propType: 2
+    enabled: 0
+    animKeyList: []
+    __displayName: Blink Base
+    __propIndex: 1
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 493720226}
+    propName: _Blink
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Blink
+    __propIndex: 2
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 493720226}
+    propName: _Brightness
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Brightness
+    __propIndex: 3
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 493720226}
+    propName: _SightRange
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Sight Range
+    __propIndex: 4
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+--- !u!4 &454177728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454177726}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.7298796, y: 0.01955986, z: 84.790276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &459133499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1693,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459133499}
   m_CullTransparentMesh: 1
+--- !u!21 &493720226
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rito_Screen Vignette and Blink
+  m_Shader: {fileID: 4800000, guid: 9684b3ed64d7eae42877d8035b99d4c0, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blink: 0
+    - _BlinkBase: 24
+    - _Brightness: 1
+    - _SightRange: 1
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &513542746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,6 +4069,223 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637179317}
   m_CullTransparentMesh: 1
+--- !u!1 &1639532322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639532324}
+  - component: {fileID: 1639532323}
+  m_Layer: 0
+  m_Name: Screen Effect [Screen Chromatic Aberration]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1639532323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639532322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7731e18125717ec48bf79d880784ea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2104576650}
+  priority: 0
+  stopAction: 0
+  useTargetFPS: 1
+  targetFPS: 60
+  isTimeModeSeconds: 1
+  durationSeconds: 0
+  durationFrame: 0
+  animPlaySpeed: 0.64
+  affectedByTimescale: 1
+  __optionFoldout1: 1
+  __optionFoldout2: 1
+  __matPropListFoldout: 1
+  __propCount: 7
+  __durationChangeActionPopupIndex: 0
+  __materialDefaultValues:
+  - time: 0
+    frame: 0
+    floatValue: 0.1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0.1, g: 0, b: 0, a: 0}
+    vector4: {x: 0.1, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0
+    range: {x: 0.1, y: 0}
+    min: 0.1
+    max: 0
+    color: {r: 0, g: 0.1, b: 0, a: 0}
+    vector4: {x: 0, y: 0.1, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: -0.1
+    range: {x: -0.1, y: 0}
+    min: -0.1
+    max: 0
+    color: {r: -0.1, g: -0.1, b: 0, a: 0}
+    vector4: {x: -0.1, y: -0.1, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0.1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0.1, g: 0, b: 0, a: 0}
+    vector4: {x: 0.1, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 1, g: 0, b: 0, a: 0}
+    vector4: {x: 1, y: 0, z: 0, w: 0}
+  __materialCurrentValues:
+  - time: 0
+    frame: 0
+    floatValue: 0.1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0.1, g: 0, b: 0, a: 0}
+    vector4: {x: 0.1, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0
+    range: {x: 0.1, y: 0}
+    min: 0.1
+    max: 0
+    color: {r: 0, g: 0.1, b: 0, a: 0}
+    vector4: {x: 0, y: 0.1, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: -0.1
+    range: {x: -0.1, y: 0}
+    min: -0.1
+    max: 0
+    color: {r: -0.1, g: -0.1, b: 0, a: 0}
+    vector4: {x: -0.1, y: -0.1, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 0.1
+    range: {x: 0, y: 1}
+    min: 0
+    max: 1
+    color: {r: 0.1, g: 0, b: 1, a: 0}
+    vector4: {x: 0.1, y: 0, z: 1, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0.01, y: 2}
+    min: 0.01
+    max: 2
+    color: {r: 1, g: 0.01, b: 2, a: 0}
+    vector4: {x: 1, y: 0.01, z: 2, w: 0}
+  matPropertyList:
+  - material: {fileID: 2104576650}
+    propName: _RedOffset
+    propType: 1
+    enabled: 0
+    animKeyList: []
+    __displayName: Red Offset
+    __propIndex: 1
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 2104576650}
+    propName: _BlueOffset
+    propType: 1
+    enabled: 0
+    animKeyList: []
+    __displayName: Blue Offset
+    __propIndex: 2
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 2104576650}
+    propName: _GreenOffset
+    propType: 1
+    enabled: 0
+    animKeyList: []
+    __displayName: Green Offset
+    __propIndex: 3
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 2104576650}
+    propName: _Intensity
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Intensity
+    __propIndex: 4
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 2104576650}
+    propName: _CircleRangePower
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Circle Range Power
+    __propIndex: 5
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+--- !u!4 &1639532324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639532322}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.7298796, y: 0.01955986, z: 84.790276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677469961
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,6 +5653,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26598493bf8003d479f9e6d4b69bc06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &2104576650
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rito_Screen Chromatic Aberration
+  m_Shader: {fileID: 4800000, guid: b71ad8d1758c4f0419d9a7cf784ad976, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CircleRangePower: 1
+    - _Intensity: 0.1
+    m_Colors:
+    - _BlueOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _GreenOffset: {r: -0.1, g: -0.1, b: 0, a: 0}
+    - _RedOffset: {r: 0.1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &2276230562367818406
 GameObject:
   m_ObjectHideFlags: 0

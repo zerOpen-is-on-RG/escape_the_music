@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Note note;
     public GameObject trackingParticle;
     public GameObject blur;
+
+    public GameObject effect1;
+    public GameObject effect2;
     public GameObject screen;
     public GameObject tv;
     public TrackSet trackSet;
