@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     public bool isPlaying = false;
     public bool detecting = false;
 
+    public bool Debugging;
+
     public float timeline = 0;
     public float forceTimeline = 0;
     public List<float> endPattern = new();
@@ -67,6 +69,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (Debugging) return;
+
         Application.targetFrameRate = 60;
 
         track = Instantiate(trackSet.FindByName(PlayerPrefs.GetString("selectedMusic")));

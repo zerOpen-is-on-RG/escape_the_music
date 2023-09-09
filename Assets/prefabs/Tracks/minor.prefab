@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: -5909259801973211279}
   - component: {fileID: 4771313944074497563}
   - component: {fileID: 4967089082406653327}
+  - component: {fileID: 554384948}
   m_Layer: 0
   m_Name: minor
   m_TagString: Untagged
@@ -490,10 +491,314 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternSpeed: 25
   clearPattern: 0
-  patterns: []
+  patterns:
+  - name: 3.59
+    timeline: 3.59
+    x: 3.1555395
+    noteType: default
+  - name: 3.89
+    timeline: 3.89
+    x: 1.1259404
+    noteType: default
+  - name: 4.05
+    timeline: 4.05
+    x: 4.6565967
+    noteType: default
+  - name: 4.22
+    timeline: 4.22
+    x: 0.5762584
+    noteType: default
+  - name: 4.37
+    timeline: 4.37
+    x: 2.9229808
+    noteType: default
+  - name: 4.52
+    timeline: 4.52
+    x: -2.0453067
+    noteType: default
+  - name: 4.68
+    timeline: 4.68
+    x: 3.4938056
+    noteType: default
+  - name: 4.83
+    timeline: 4.83
+    x: 0.7031088
+    noteType: default
+  - name: 4.99
+    timeline: 4.99
+    x: 7.383869
+    noteType: default
+  - name: 5.14
+    timeline: 5.14
+    x: -2.151015
+    noteType: default
+  - name: 5.3
+    timeline: 5.3
+    x: -0.7768079
+    noteType: default
+  - name: 5.46
+    timeline: 5.46
+    x: -6.44277
+    noteType: default
+  - name: 5.61
+    timeline: 5.61
+    x: -2.7006977
+    noteType: default
+  - name: 5.76
+    timeline: 5.76
+    x: -0.58653283
+    noteType: default
+  - name: 5.91
+    timeline: 5.91
+    x: 8.462093
+    noteType: default
+  - name: 6.07
+    timeline: 6.07
+    x: 3.3246727
+    noteType: default
+  - name: 6.23
+    timeline: 6.23
+    x: -2.3624315
+    noteType: default
+  - name: 6.39
+    timeline: 6.39
+    x: 1.1682242
+    noteType: default
+  - name: 6.56
+    timeline: 6.56
+    x: -0.43854114
+    noteType: default
+  - name: 6.73
+    timeline: 6.73
+    x: -2.151015
+    noteType: default
+  - name: 6.89
+    timeline: 6.89
+    x: 2.8595562
+    noteType: default
+  - name: 7.06
+    timeline: 7.06
+    x: 4.19148
+    noteType: default
+  - name: 7.23
+    timeline: 7.23
+    x: -2.637273
+    noteType: default
+  - name: 7.41
+    timeline: 7.41
+    x: -0.6710994
+    noteType: default
+  - name: 7.58
+    timeline: 7.58
+    x: 5.185137
+    noteType: default
+  - name: 7.76
+    timeline: 7.76
+    x: -1.770465
+    noteType: default
+  - name: 7.94
+    timeline: 7.94
+    x: 4.95258
+    noteType: default
+  - name: 8.12
+    timeline: 8.12
+    x: -0.50196636
+    noteType: default
+  - name: 8.32
+    timeline: 8.32
+    x: 1.5064905
+    noteType: default
+  - name: 8.47
+    timeline: 8.47
+    x: 2.8595562
+    noteType: default
+  - name: 8.64
+    timeline: 8.64
+    x: 1.1682242
+    noteType: default
+  - name: 8.8
+    timeline: 8.8
+    x: 1.9293243
+    noteType: default
+  - name: 8.96
+    timeline: 8.96
+    x: -1.2419238
+    noteType: default
+  - name: 9.12
+    timeline: 9.12
+    x: 1.9927489
+    noteType: default
+  - name: 9.28
+    timeline: 9.28
+    x: -2.4469981
+    noteType: default
+  - name: 9.46
+    timeline: 9.46
+    x: -1.5801905
+    noteType: default
+  - name: 9.65
+    timeline: 9.65
+    x: 1.3584993
+    noteType: default
+  - name: 9.81
+    timeline: 9.81
+    x: -0.6710994
+    noteType: default
+  - name: 9.98
+    timeline: 9.98
+    x: 6.813044
+    noteType: default
+  - name: 10.15
+    timeline: 10.15
+    x: -3.3138053
+    noteType: default
+  - name: 10.33
+    timeline: 10.33
+    x: -0.10027498
+    noteType: default
+  - name: 10.49
+    timeline: 10.49
+    x: 1.9293243
+    noteType: default
+  - name: 10.65
+    timeline: 10.65
+    x: -3.3560886
+    noteType: default
+  - name: 10.82
+    timeline: 10.82
+    x: 4.2549047
+    noteType: default
+  - name: 10.99
+    timeline: 10.99
+    x: 2.6481392
+    noteType: default
+  - name: 11.17
+    timeline: 11.17
+    x: 2.2464473
+    noteType: default
+  - name: 11.36
+    timeline: 11.36
+    x: 3.5572302
+    noteType: default
+  - name: 11.54
+    timeline: 11.54
+    x: -2.425856
+    noteType: default
+  - name: 11.71
+    timeline: 11.71
+    x: 4.7411633
+    noteType: default
+  - name: 11.88
+    timeline: 11.88
+    x: -1.7493231
+    noteType: default
+  - name: 12.03
+    timeline: 12.03
+    x: 2.9864054
+    noteType: default
+  - name: 12.2
+    timeline: 12.2
+    x: 2.1830237
+    noteType: default
+  - name: 12.36
+    timeline: 12.36
+    x: 4.212622
+    noteType: default
+  - name: 12.54
+    timeline: 12.54
+    x: 4.2760468
+    noteType: default
+  - name: 12.73
+    timeline: 12.73
+    x: -1.1573573
+    noteType: default
+  - name: 12.93
+    timeline: 12.93
+    x: -0.10027498
+    noteType: default
+  - name: 13.09
+    timeline: 13.09
+    x: 2.8384142
+    noteType: default
+  - name: 13.28
+    timeline: 13.28
+    x: -4.1171885
+    noteType: default
+  - name: 13.46
+    timeline: 13.46
+    x: 2.0138907
+    noteType: default
+  - name: 13.63
+    timeline: 13.63
+    x: -3.2292387
+    noteType: default
+  - name: 13.79
+    timeline: 13.79
+    x: 5.206279
+    noteType: default
+  - name: 13.98
+    timeline: 13.98
+    x: 2.119599
+    noteType: default
+  - name: 14.17
+    timeline: 14.17
+    x: 2.0138907
+    noteType: default
+  - name: 14.36
+    timeline: 14.36
+    x: 4.3183293
+    noteType: default
+  - name: 14.55
+    timeline: 14.55
+    x: 0.829957
+    noteType: default
+  - name: 14.74
+    timeline: 14.74
+    x: -2.08759
+    noteType: default
+  - name: 14.93
+    timeline: 14.93
+    x: 0.23799118
+    noteType: default
+  - name: 15.13
+    timeline: 15.13
+    x: 4.1280546
+    noteType: default
+  - name: 15.31
+    timeline: 15.31
+    x: -2.151015
+    noteType: default
+  - name: 15.49
+    timeline: 15.49
+    x: 3.7686462
+    noteType: default
+  - name: 15.68
+    timeline: 15.68
+    x: -0.54424965
+    noteType: default
+  - name: 15.85
+    timeline: 15.85
+    x: 4.0857716
+    noteType: default
+  - name: 16.02
+    timeline: 16.02
+    x: -0.16370016
+    noteType: default
+  - name: 16.2
+    timeline: 16.2
+    x: 1.2950735
+    noteType: default
+  - name: 16.36
+    timeline: 16.36
+    x: 1.4853486
+    noteType: default
+  - name: 16.54
+    timeline: 16.54
+    x: -2.1298733
+    noteType: default
   startTracking: 0
   stopTracking: 0
-  isTracking: 0
+  isTracking: 1
 --- !u!114 &4967089082406653327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +822,10 @@ MonoBehaviour:
   effect1: {fileID: 0}
 --- !u!1 &3359783780276848093
 GameObject:
+  background: {fileID: 0}
+  map: {fileID: 0}
+--- !u!114 &554384948
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
