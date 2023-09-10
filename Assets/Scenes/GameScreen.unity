@@ -826,6 +826,7 @@ MonoBehaviour:
   title: {fileID: 143433443}
   isPlaying: 0
   detecting: 0
+  Debugging: 0
   timeline: 0
   forceTimeline: 0
   endPattern: []
@@ -2291,7 +2292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -45.2}
+  m_AnchoredPosition: {x: 0, y: -80.15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &704055123

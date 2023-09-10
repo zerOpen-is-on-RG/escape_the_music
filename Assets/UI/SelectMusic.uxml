@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Menu.uss?fileID=7433441132597879392&amp;guid=356e006b53d383145a8825f24eee0daf&amp;type=3#Menu" />
-    <ui:VisualElement name="selectMusicPanel" class="selectMusicOut selectMusicIn">
+    <ui:VisualElement name="selectMusicPanel" class="selectMusicOut">
         <ui:Button name="musicBackground" class="MusicPanel" />
         <ui:Label text="배경을 눌러서 시작하세요" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/fonts/CookieRun%20Bold.otf?fileID=12800000&amp;guid=ee191a9a90a6f9042a8142fa80cf7119&amp;type=3#CookieRun Bold&apos;); -unity-font-definition: initial; color: rgb(255, 218, 0); font-size: 41px; -unity-text-align: upper-center; top: 0; left: 847px; width: 1082px; position: absolute; background-color: rgba(0, 0, 0, 0.48);" />
         <ui:VisualElement style="position: absolute; height: 200%; background-color: rgb(26, 26, 26); width: 60%; top: -720px; left: -328px; rotate: 20deg;" />
