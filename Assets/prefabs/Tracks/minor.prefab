@@ -508,219 +508,211 @@ MonoBehaviour:
     noteType: up
   - name: 3.88
     timeline: 3.8
-    x: 5.5
+    x: 4
     noteType: double
-  - name: 4.11
-    timeline: 4.05
-    x: 5
-    noteType: double
+  - name: 4.15
+    timeline: 4.075
+    x: 4
+    noteType: default
   - name: 4.25
-    timeline: 4.3
-    x: 5.1005044
+    timeline: 4.32
+    x: 2.5
     noteType: horizontal1
   - name: 4.44
     timeline: 4.45
-    x: 0.1215122
+    x: 1.5
     noteType: up
   - name: 4.6
-    timeline: 4.62
-    x: -0.06756296
+    timeline: 4.6
+    x: 0
     noteType: default
   - name: 4.76
-    timeline: 4.76
-    x: -3.3868911
+    timeline: 4.75
+    x: 2.5
     noteType: horizontal1
   - name: 4.91
-    timeline: 4.91
-    x: -3.5129411
+    timeline: 4.925
+    x: -2.5
     noteType: up
   - name: 5.14
-    timeline: 5.14
-    x: 1.297983
+    timeline: 5.25
+    x: 0
     noteType: default
   - name: 5.29
-    timeline: 5.29
-    x: 1.7601676
+    timeline: 5.5
+    x: 3.5
     noteType: horizontal1
-  - name: 5.52
-    timeline: 5.52
-    x: 5.16353
-    noteType: default
   - name: 5.74
-    timeline: 5.74
-    x: 5.247563
+    timeline: 5.75
+    x: 1.5
     noteType: up
   - name: 5.92
-    timeline: 5.92
-    x: 7.39042
+    timeline: 6
+    x: 3
     noteType: default
-  - name: 6.17
-    timeline: 6.17
-    x: 1.1509243
+  - name: 6.19
+    timeline: 6.19
+    x: 1.5
     noteType: horizontal1
   - name: 6.34
-    timeline: 6.34
-    x: -0.97092426
+    timeline: 6.3
+    x: -1.1
     noteType: up
   - name: 6.51
-    timeline: 6.51
-    x: -3.029748
+    timeline: 6.55
+    x: -2
     noteType: default
-  - name: 6.67
-    timeline: 6.67
-    x: -3.9121006
+  - name: 6.75
+    timeline: 6.75
+    x: -2
     noteType: horizontal1
-  - name: 6.88
-    timeline: 6.88
-    x: -3.6599998
-    noteType: up
-  - name: 7.03
-    timeline: 7.03
-    x: -3.344874
-    noteType: default
+  - name: 6.9
+    timeline: 7.025
+    x: -5
+    noteType: double
   - name: 7.17
-    timeline: 7.17
-    x: -2.9457142
-    noteType: default
+    timeline: 7.15
+    x: -3
+    noteType: up
   - name: 7.3
     timeline: 7.3
-    x: -2.2524366
+    x: -2
     noteType: horizontal1
   - name: 7.44
-    timeline: 7.44
-    x: -1.475126
+    timeline: 7.45
+    x: -1
     noteType: horizontal1
   - name: 7.58
-    timeline: 7.58
-    x: -0.6978148
+    timeline: 7.55
+    x: -0.15
     noteType: horizontal1
   - name: 7.71
-    timeline: 7.71
-    x: 0.1215122
+    timeline: 7.65
+    x: 1
     noteType: horizontal1
   - name: 7.84
-    timeline: 7.84
-    x: 1.6971432
+    timeline: 7.825
+    x: 2.15
     noteType: horizontal1
   - name: 8.13
-    timeline: 8.13
-    x: -2.8196642
-    noteType: default
+    timeline: 8
+    x: 3.5
+    noteType: double
   - name: 8.25
-    timeline: 8.25
+    timeline: 8.2
     x: -2.7566385
     noteType: up
   - name: 8.5
     timeline: 8.5
-    x: 2.327395
+    x: 2.35
     noteType: default
   - name: 8.64
-    timeline: 8.64
-    x: 2.327395
+    timeline: 8.65
+    x: 2.35
     noteType: default
   - name: 8.85
     timeline: 8.85
-    x: -1.538151
+    x: -1.535
     noteType: default
   - name: 8.99
-    timeline: 8.99
-    x: -1.4961346
+    timeline: 9
+    x: -1.535
     noteType: default
   - name: 9.2
     timeline: 9.2
-    x: 4.680337
+    x: 3.555
     noteType: default
   - name: 9.46
-    timeline: 9.46
-    x: 6.99126
+    timeline: 9.4
+    x: 5.255
     noteType: default
   - name: 9.6
     timeline: 9.6
-    x: 7.033277
+    x: 5.255
     noteType: up
   - name: 9.8
     timeline: 9.8
-    x: 0.81478983
+    x: 0.9
     noteType: default
   - name: 9.96
     timeline: 9.96
-    x: 0.94083995
+    x: 0.9
     noteType: default
   - name: 10.16
-    timeline: 10.16
-    x: -4.143193
+    timeline: 10.15
+    x: -4.15
     noteType: horizontal1
   - name: 10.31
-    timeline: 10.31
-    x: -4.143193
+    timeline: 10.35
+    x: -4.15
     noteType: up
   - name: 10.54
     timeline: 10.54
     x: 2.0542862
     noteType: default
   - name: 10.69
-    timeline: 10.69
-    x: 2.0542862
+    timeline: 10.725
+    x: 2.05
     noteType: default
-  - name: 10.87
-    timeline: 10.87
-    x: 6.129916
-    noteType: default
-  - name: 11.01
-    timeline: 11.01
-    x: 6.3399997
+  - name: double-up1
+    timeline: 10.85
+    x: 3.95
     noteType: up
-  - name: 11.22
-    timeline: 11.22
-    x: 0.58369684
-    noteType: default
-  - name: 11.38
-    timeline: 11.38
-    x: 0.6047054
-    noteType: default
+  - name: double-up2
+    timeline: 10.865
+    x: -3.95
+    noteType: up
+  - name: double-slide1
+    timeline: 11.25
+    x: -2.5
+    noteType: horizontal1
+  - name: double-slide2
+    timeline: 11.265
+    x: 2.5
+    noteType: horizontal1
   - name: 11.53
-    timeline: 11.53
+    timeline: 11.55
     x: -3.5129411
-    noteType: default
-  - name: 11.66
-    timeline: 11.66
-    x: -3.5129411
+    noteType: double
+  - name: double-up and slide
+    timeline: 11.75
+    x: -3.575
     noteType: up
-  - name: 11.86
-    timeline: 11.86
-    x: 1.6341175
-    noteType: default
+  - name: double-slide
+    timeline: 11.76
+    x: 3.575
+    noteType: horizontal1
   - name: 12.01
-    timeline: 12.01
-    x: 1.6971432
+    timeline: 12.05
+    x: 1.75
     noteType: default
   - name: 12.19
-    timeline: 12.19
-    x: 5.247563
+    timeline: 12.2
+    x: 5.25
     noteType: horizontal1
   - name: 12.35
     timeline: 12.35
-    x: 5.4996643
+    x: 3.75
     noteType: horizontal1
   - name: 12.5
     timeline: 12.5
-    x: 2.6005037
+    x: 2.15
     noteType: horizontal1
   - name: 12.64
-    timeline: 12.64
-    x: 2.5374794
+    timeline: 12.65
+    x: 1
     noteType: horizontal1
   - name: 12.77
-    timeline: 12.77
-    x: 0.6047054
+    timeline: 12.75
+    x: -0.15
     noteType: horizontal1
   - name: 12.92
-    timeline: 12.92
-    x: -0.3826889
+    timeline: 12.9
+    x: -1.25
     noteType: horizontal1
   - name: 13.06
-    timeline: 13.06
-    x: -1.4331089
+    timeline: 13.05
+    x: -2.5
     noteType: horizontal1
   - name: 13.2
     timeline: 13.2
@@ -744,8 +736,8 @@ MonoBehaviour:
     noteType: default
   - name: 14.2
     timeline: 14.2
-    x: 6.003865
-    noteType: default
+    x: 5
+    noteType: horizontal1
   - name: 14.38
     timeline: 14.38
     x: 3.8820162
@@ -763,17 +755,17 @@ MonoBehaviour:
     x: -3.3028574
     noteType: default
   - name: 15.13
-    timeline: 15.13
-    x: -2.5675633
+    timeline: 15.15
+    x: -2.55
     noteType: default
   - name: 15.28
-    timeline: 15.28
-    x: -0.50873965
-    noteType: default
+    timeline: 15.3
+    x: -0.55
+    noteType: up
   - name: 15.42
-    timeline: 15.42
-    x: 0.6047054
-    noteType: default
+    timeline: 15.4
+    x: 0.55
+    noteType: horizontal1
   - name: 15.57
     timeline: 15.57
     x: 1.6761347
@@ -787,57 +779,53 @@ MonoBehaviour:
     x: 4.9534454
     noteType: default
   - name: 16.05
-    timeline: 16.05
-    x: 6.1089077
-    noteType: default
+    timeline: 16.1
+    x: -5
+    noteType: up
   - name: 16.19
-    timeline: 16.19
-    x: 6.907227
-    noteType: default
+    timeline: 16.115
+    x: 5
+    noteType: horizontal1
   - name: 16.34
-    timeline: 16.34
-    x: 4.0921006
-    noteType: default
-  - name: 16.46
-    timeline: 16.46
-    x: 3.6509244
-    noteType: default
+    timeline: 16.35
+    x: 4
+    noteType: double
   - name: 16.61
-    timeline: 16.61
-    x: -0.61378115
+    timeline: 16.6
+    x: 0
     noteType: default
   - name: 16.76
-    timeline: 16.76
-    x: -1.6852098
+    timeline: 16.75
+    x: 0
     noteType: default
   - name: 16.89
-    timeline: 16.89
-    x: -2.9877307
+    timeline: 16.9
+    x: 0
     noteType: default
   - name: 17.05
     timeline: 17.05
-    x: -3.2398317
+    x: 0
     noteType: default
   - name: 17.2
     timeline: 17.2
-    x: -2.1684031
+    x: 0
     noteType: default
   - name: 17.34
-    timeline: 17.34
-    x: -1.2230252
+    timeline: 17.35
+    x: 0
     noteType: default
   - name: 17.48
-    timeline: 17.48
-    x: -0.130588
+    timeline: 17.5
+    x: 0
     noteType: default
   - name: 17.62
-    timeline: 17.62
-    x: 0.66773117
+    timeline: 17.65
+    x: 0
     noteType: default
   - name: 17.92
-    timeline: 17.92
-    x: -2.651597
-    noteType: default
+    timeline: 17.85
+    x: -2.85
+    noteType: double
   - name: 18.16
     timeline: 18.16
     x: -2.651597
@@ -867,9 +855,9 @@ MonoBehaviour:
     x: 5.625715
     noteType: default
   - name: 20.33
-    timeline: 20.33
-    x: 6.466051
-    noteType: default
+    timeline: 20.35
+    x: 5.95
+    noteType: double
   - name: 20.64
     timeline: 20.64
     x: 3.6509244
@@ -903,409 +891,409 @@ MonoBehaviour:
     x: -1.7062184
     noteType: default
   - name: 23.22
-    timeline: 23.22
-    x: -0.99193287
-    noteType: default
+    timeline: 23.25
+    x: -1.25
+    noteType: double
   - name: 23.53
-    timeline: 23.53
-    x: -0.63478976
+    timeline: 23.55
+    x: 0
     noteType: default
   - name: 23.68
-    timeline: 23.68
-    x: -0.130588
-    noteType: default
+    timeline: 23.7
+    x: 0
+    noteType: up
   - name: 23.82
-    timeline: 23.82
-    x: 0.2055465
+    timeline: 23.85
+    x: 0
     noteType: default
   - name: 23.97
-    timeline: 23.97
-    x: 0.49966386
-    noteType: default
+    timeline: 24
+    x: 0
+    noteType: up
   - name: 24.14
-    timeline: 24.14
-    x: 0.89882416
+    timeline: 24.15
+    x: 0
     noteType: default
   - name: 24.33
-    timeline: 24.33
-    x: 1.5080674
-    noteType: default
+    timeline: 24.3
+    x: 0
+    noteType: up
   - name: 24.49
-    timeline: 24.49
-    x: 1.9072263
+    timeline: 24.45
+    x: 0
     noteType: default
   - name: 24.63
-    timeline: 24.63
-    x: 2.3063865
-    noteType: default
+    timeline: 24.6
+    x: 0
+    noteType: up
   - name: 24.79
-    timeline: 24.79
-    x: 2.6845381
+    timeline: 24.75
+    x: 0
     noteType: default
   - name: 24.96
-    timeline: 24.96
-    x: 3.125714
-    noteType: default
+    timeline: 24.9
+    x: 0
+    noteType: up
   - name: 25.13
-    timeline: 25.13
-    x: 3.4618487
+    timeline: 25.05
+    x: 0
     noteType: default
   - name: 25.27
-    timeline: 25.27
-    x: 3.6509244
-    noteType: default
+    timeline: 25.2
+    x: 0
+    noteType: up
   - name: 25.42
-    timeline: 25.42
-    x: 3.9660504
+    timeline: 25.35
+    x: 0
     noteType: default
   - name: 25.56
-    timeline: 25.56
-    x: 4.4072266
-    noteType: default
+    timeline: 25.5
+    x: 0
+    noteType: up
   - name: 25.7
-    timeline: 25.7
-    x: 4.8694115
-    noteType: default
+    timeline: 25.65
+    x: 4.55
+    noteType: double
   - name: 26.1
-    timeline: 26.1
-    x: -0.92890775
-    noteType: default
+    timeline: 26.15
+    x: 0
+    noteType: horizontal1
   - name: 26.28
-    timeline: 26.28
-    x: -0.97092426
-    noteType: default
+    timeline: 26.3
+    x: 0
+    noteType: up
   - name: 26.44
-    timeline: 26.44
-    x: -1.0759665
-    noteType: default
+    timeline: 26.45
+    x: 0
+    noteType: horizontal1
   - name: 26.59
-    timeline: 26.59
-    x: -1.4541174
-    noteType: default
+    timeline: 26.6
+    x: 0
+    noteType: up
   - name: 26.74
-    timeline: 26.74
-    x: -1.7692434
-    noteType: default
+    timeline: 26.75
+    x: 0
+    noteType: horizontal1
   - name: 26.88
-    timeline: 26.88
-    x: -2.042353
-    noteType: default
+    timeline: 26.9
+    x: 0
+    noteType: up
   - name: 27.04
-    timeline: 27.04
-    x: -2.4415126
-    noteType: default
+    timeline: 27.05
+    x: 0
+    noteType: horizontal1
   - name: 27.21
-    timeline: 27.21
-    x: -3.0507565
-    noteType: default
+    timeline: 27.2
+    x: 0
+    noteType: up
   - name: 27.38
-    timeline: 27.38
-    x: -3.4919326
-    noteType: default
+    timeline: 27.35
+    x: 0
+    noteType: horizontal1
   - name: 27.54
-    timeline: 27.54
-    x: -3.933109
-    noteType: default
+    timeline: 27.5
+    x: 0
+    noteType: up
   - name: 27.69
-    timeline: 27.69
-    x: -4.353277
-    noteType: default
+    timeline: 27.65
+    x: 0
+    noteType: horizontal1
   - name: 27.84
-    timeline: 27.84
-    x: -4.626386
-    noteType: default
+    timeline: 27.8
+    x: 0
+    noteType: up
   - name: 28.01
-    timeline: 28.01
-    x: -4.920504
-    noteType: default
+    timeline: 28
+    x: -3.55
+    noteType: double
   - name: 28.27
-    timeline: 28.27
-    x: -2.2734454
+    timeline: 28.25
+    x: 0
     noteType: default
   - name: 28.43
-    timeline: 28.43
-    x: -2.2734454
-    noteType: default
+    timeline: 28.4
+    x: 0
+    noteType: horizontal1
   - name: 28.66
-    timeline: 28.66
-    x: -1.3700838
+    timeline: 28.55
+    x: 0
     noteType: default
   - name: 28.85
-    timeline: 28.85
-    x: -0.9078992
-    noteType: default
+    timeline: 28.7
+    x: 0
+    noteType: up
   - name: 29.01
-    timeline: 29.01
-    x: -0.5507561
+    timeline: 28.9
+    x: 0
     noteType: default
   - name: 29.14
-    timeline: 29.14
-    x: -0.23563021
-    noteType: default
+    timeline: 29.05
+    x: 0
+    noteType: horizontal1
   - name: 29.29
-    timeline: 29.29
-    x: 0.10050362
+    timeline: 29.2
+    x: 0
     noteType: default
   - name: 29.44
-    timeline: 29.44
-    x: 0.54168105
-    noteType: default
+    timeline: 29.35
+    x: 0
+    noteType: up
   - name: 29.59
-    timeline: 29.59
-    x: 1.0668913
+    timeline: 29.5
+    x: 0
     noteType: default
   - name: 29.73
-    timeline: 29.73
-    x: 1.529076
-    noteType: default
+    timeline: 29.65
+    x: 0
+    noteType: horizontal1
   - name: 29.9
-    timeline: 29.9
-    x: 2.1593277
+    timeline: 29.8
+    x: 0
     noteType: default
   - name: 30.05
-    timeline: 30.05
-    x: 2.6005037
-    noteType: default
+    timeline: 29.95
+    x: 0
+    noteType: up
   - name: 30.2
-    timeline: 30.2
-    x: 3.4198315
+    timeline: 30.1
+    x: 0
     noteType: default
   - name: 30.35
-    timeline: 30.35
-    x: 4.0080676
-    noteType: default
+    timeline: 30.25
+    x: 0
+    noteType: horizontal1
   - name: 30.5
     timeline: 30.5
-    x: 4.7223525
-    noteType: default
+    x: 4.5
+    noteType: up
   - name: 30.64
-    timeline: 30.64
-    x: 5.121513
-    noteType: default
+    timeline: 30.525
+    x: -4.5
+    noteType: up
   - name: 30.93
-    timeline: 30.93
-    x: 2.1803362
+    timeline: 30.9
+    x: 0
     noteType: default
   - name: 31.07
-    timeline: 31.07
-    x: 2.0542862
-    noteType: default
+    timeline: 31.05
+    x: 3
+    noteType: up
   - name: 31.23
-    timeline: 31.23
-    x: 1.3820174
+    timeline: 31.2
+    x: 0
     noteType: default
   - name: 31.39
-    timeline: 31.39
-    x: 1.0038656
-    noteType: default
+    timeline: 31.35
+    x: -3
+    noteType: up
   - name: 31.56
-    timeline: 31.56
-    x: 0.14252077
+    timeline: 31.5
+    x: 0
     noteType: default
   - name: 31.7
-    timeline: 31.7
-    x: -0.48773113
-    noteType: default
+    timeline: 31.65
+    x: 3
+    noteType: up
   - name: 31.86
-    timeline: 31.86
-    x: -1.0339493
+    timeline: 31.8
+    x: 0
     noteType: default
   - name: 32
-    timeline: 32
-    x: -1.6852098
-    noteType: default
+    timeline: 31.95
+    x: -3
+    noteType: up
   - name: 32.15
-    timeline: 32.15
-    x: -2.2944539
+    timeline: 32.1
+    x: 0
     noteType: default
   - name: 32.3
-    timeline: 32.3
-    x: -2.7356305
-    noteType: default
+    timeline: 32.25
+    x: 3
+    noteType: up
   - name: 32.44
-    timeline: 32.44
-    x: -3.6599998
+    timeline: 32.4
+    x: 0
     noteType: default
   - name: 32.61
-    timeline: 32.61
-    x: -3.8490756
-    noteType: default
+    timeline: 32.55
+    x: -3
+    noteType: up
   - name: 32.75
-    timeline: 32.75
-    x: -4.143193
+    timeline: 32.7
+    x: 0
     noteType: default
   - name: 32.9
     timeline: 32.9
-    x: -4.1852098
+    x: -4
     noteType: default
   - name: 33.06
-    timeline: 33.06
-    x: -4.080168
+    timeline: 33.05
+    x: -3
     noteType: default
   - name: 33.56
-    timeline: 33.56
-    x: -3.3028574
+    timeline: 33.25
+    x: 3
     noteType: default
   - name: 33.73
-    timeline: 33.73
-    x: -3.1347902
+    timeline: 33.45
+    x: 4
     noteType: default
   - name: 33.87
-    timeline: 33.87
-    x: -2.3784876
+    timeline: 33.65
+    x: -4
     noteType: default
   - name: 34.03
-    timeline: 34.03
-    x: -1.8322691
+    timeline: 33.85
+    x: -2
     noteType: default
   - name: 34.18
-    timeline: 34.18
-    x: -1.3070588
+    timeline: 34.05
+    x: 2
     noteType: default
   - name: 34.32
-    timeline: 34.32
-    x: -0.739832
-    noteType: default
+    timeline: 34.25
+    x: 4
+    noteType: double
   - name: 34.7
-    timeline: 34.7
-    x: 1.0668913
+    timeline: 34.5
+    x: -4
     noteType: default
   - name: 34.84
-    timeline: 34.84
-    x: 1.1299157
+    timeline: 34.65
+    x: -3
     noteType: default
   - name: 35
-    timeline: 35
-    x: 1.6761347
+    timeline: 34.85
+    x: -2
     noteType: default
   - name: 35.16
-    timeline: 35.16
-    x: 2.1593277
+    timeline: 35
+    x: -1
     noteType: default
   - name: 35.32
-    timeline: 35.32
-    x: 2.7895796
+    timeline: 35.15
+    x: 0
     noteType: default
   - name: 35.47
-    timeline: 35.47
-    x: 3.398823
+    timeline: 35.3
+    x: 1
     noteType: default
   - name: 35.62
-    timeline: 35.62
-    x: 3.8400004
-    noteType: default
+    timeline: 35.45
+    x: 3.5
+    noteType: double
   - name: 35.77
-    timeline: 35.77
-    x: 4.0080676
+    timeline: 35.6
+    x: 3
     noteType: default
   - name: 36.17
-    timeline: 36.17
-    x: 1.9492434
+    timeline: 35.75
+    x: 4
     noteType: default
   - name: 36.31
-    timeline: 36.31
-    x: 1.5500846
+    timeline: 36.15
+    x: 0
     noteType: default
   - name: 36.46
-    timeline: 36.46
-    x: 0.66773117
-    noteType: default
+    timeline: 36.3
+    x: -0.75
+    noteType: up
   - name: 36.61
-    timeline: 36.61
-    x: 0.037479248
+    timeline: 36.45
+    x: -1.5
     noteType: default
   - name: 36.76
-    timeline: 36.76
-    x: -0.52974755
-    noteType: default
+    timeline: 36.6
+    x: -2.25
+    noteType: horizontal1
   - name: 36.92
-    timeline: 36.92
-    x: -2.7356305
+    timeline: 36.75
+    x: -3
     noteType: default
   - name: 37.05
-    timeline: 37.05
-    x: -2.7986555
-    noteType: default
+    timeline: 36.9
+    x: -3.75
+    noteType: up
   - name: 37.21
-    timeline: 37.21
-    x: -3.0087392
+    timeline: 37.05
+    x: -4.5
     noteType: default
   - name: 37.36
-    timeline: 37.36
-    x: -2.9036973
-    noteType: default
+    timeline: 37.2
+    x: -3.75
+    noteType: horizontal1
   - name: 37.5
-    timeline: 37.5
-    x: -2.1894116
+    timeline: 37.35
+    x: -3
     noteType: default
   - name: 37.66
-    timeline: 37.66
-    x: -1.790252
-    noteType: default
+    timeline: 37.5
+    x: -2.25
+    noteType: up
   - name: 37.82
-    timeline: 37.82
-    x: -1.2020166
+    timeline: 37.65
+    x: -1.5
     noteType: default
   - name: 37.97
-    timeline: 37.97
-    x: -0.6557983
-    noteType: default
+    timeline: 37.8
+    x: -0.75
+    noteType: horizontal1
   - name: 38.13
-    timeline: 38.13
-    x: -0.15159658
+    timeline: 37.95
+    x: 0
     noteType: default
   - name: 38.28
-    timeline: 38.28
-    x: 0.3315966
-    noteType: default
+    timeline: 38.1
+    x: 4
+    noteType: double
   - name: 38.45
     timeline: 38.45
-    x: 0.94083995
+    x: 0
     noteType: default
   - name: 38.6
-    timeline: 38.6
-    x: 1.3400002
-    noteType: default
+    timeline: 38.55
+    x: 3
+    noteType: horizontal1
   - name: 38.76
-    timeline: 38.76
-    x: 1.5710918
+    timeline: 38.75
+    x: 5
     noteType: default
   - name: 39.05
-    timeline: 39.05
-    x: 2.7685711
-    noteType: default
+    timeline: 38.9
+    x: 3
+    noteType: horizontal1
   - name: 39.2
-    timeline: 39.2
-    x: 3.1887398
+    timeline: 39.05
+    x: 0
     noteType: default
   - name: 39.42
-    timeline: 39.42
-    x: 3.2517643
-    noteType: default
+    timeline: 39.2
+    x: -3
+    noteType: horizontal1
   - name: 39.64
-    timeline: 39.64
-    x: 4.0080676
+    timeline: 39.35
+    x: -5
     noteType: default
   - name: 39.8
-    timeline: 39.8
-    x: 4.0500836
-    noteType: default
+    timeline: 39.5
+    x: -3
+    noteType: horizontal1
   - name: 40.01
-    timeline: 40.01
-    x: 4.071092
+    timeline: 39.65
+    x: 0
     noteType: default
   - name: 40.15
     timeline: 40.15
     x: 4.134118
     noteType: default
   - name: 40.36
-    timeline: 40.36
-    x: -1.2440337
-    noteType: default
+    timeline: 40.15
+    x: 0
+    noteType: up
   - name: 40.5
-    timeline: 40.5
-    x: -1.181008
-    noteType: default
+    timeline: 40.35
+    x: 0
+    noteType: up
   - name: 40.7
     timeline: 40.7
     x: -3.1347902
