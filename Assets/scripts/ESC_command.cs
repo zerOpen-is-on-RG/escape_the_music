@@ -10,10 +10,25 @@ public class ESC_command : MonoBehaviour
     public Text countdownText;
 
     // CountDown and InGame?
-    private bool isPaused = false;
+    public bool isPaused = false;
     private bool countdownActive = false;
     private float countdownDuration = 3f;
     private float countdownTimer = 0f;
+
+    static ESC_command instance = null;
+
+    public static ESC_command Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

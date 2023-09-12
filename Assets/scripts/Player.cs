@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
 
     public float downCount = 0;
     public bool down = false;
+    public bool downC = false;
 
     public readonly Vector2 default_pos = new Vector2(4.56f, -1.58f);
 
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour
     }
     bool CheckIsGround()
     {
-        var cols = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, -2, 0), 0.4f, LayerMask.GetMask("tile"));
+        var cols = Physics2D.OverlapCircleAll(transform.position + new Vector3(0, -1.8f, 0), 0.2f, LayerMask.GetMask("tile"));
 
 
         return cols.Length > 0;
@@ -68,12 +70,38 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.localPosition.y < -1.56f) transform.localPosition = new Vector2(transform.localPosition.x, -1.56f);
+
+        if (transform.localPosition.x < -5) transform.localPosition = default_pos;
+        if (transform.localPosition.x > 20) transform.localPosition = default_pos;
+
         if (down && gameManager.detecting)
         {
             if (!CheckIsGround())
             {
                 down = false;
                 gameManager.MoveUp();
+                downC = true;
+                downCount = 0;
+            }
+        }
+
+        if (downC)
+        {
+            downCount += Time.deltaTime;
+
+            if (downCount > 1f)
+            {
+                downC = false;
+            }
+        } else if (gameManager.detecting && gameManager.isPlaying && gameManager.downing == null)
+        {
+            if (!CheckIsGround())
+            {
+                gameManager.track.structure.transform.localPosition = new Vector3(gameManager.track.structure.transform.localPosition.x, gameManager.track.structure.transform.localPosition.y + 3f);
+
+                downC = true;
+                downCount = 0.3f;
             }
         }
     }

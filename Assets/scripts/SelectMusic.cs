@@ -89,6 +89,7 @@ public class SelectMusic : MonoBehaviour
 
         menu.soundManager.Stop(4);
         menu.soundManager.Play(trackData.music, true);
+        menu.soundManager._tracks[4].time = trackData.soundOffset;
 
         int i = trackSet.IndexByName(trackData._name);
 

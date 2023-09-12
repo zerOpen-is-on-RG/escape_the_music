@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour
 
     private Vector2 downingPos = Vector2.zero;
 
+    public IEnumerator downing = null;
+    int downAfter = 0;
+
     private void Start()
     {
         if (Debugging) return;
@@ -219,10 +222,19 @@ public class GameManager : MonoBehaviour
 
     public void MoveDown()
     {
-        StartCoroutine(_moveDown());
+        if (downing != null)
+        {
+            downAfter++;
+            return;
+        }
+
+        downing = _moveDown();
+        StartCoroutine(downing);
     }
     IEnumerator _moveDown()
     {
+        player.downC = true;
+        player.downCount = 0;
         player.down = false;
         if (downingPos.x != 0 && downingPos.y != 0) {
             Debug.Log(downingPos);
@@ -240,6 +252,17 @@ public class GameManager : MonoBehaviour
         }
         downingPos = Vector2.zero;
         player.down = true;
+
+        if (downAfter > 0)
+        {
+            downing = _moveDown();
+            StartCoroutine(downing);
+
+            downAfter--;
+        } else
+        {
+            downing = null;
+        }
     }
     public void MoveUp()
     {

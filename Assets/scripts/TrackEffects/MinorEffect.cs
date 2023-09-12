@@ -30,9 +30,10 @@ public class MinorEffect : TrackEffectBase
         map.transform.localPosition = new Vector2(0, 0);
         EffectUpdate = update_;
         background.SetActive(false);
+        background2.SetActive(false);
         map.gameObject.SetActive(false);
         gameManager.effect1.SetActive(true);
-        gameManager.detecting = true;
+        gameManager.detecting = false;
 
     }
 
@@ -42,7 +43,9 @@ public class MinorEffect : TrackEffectBase
         var col=map.color;
         if(timeline<=2.7f)
         {
+            background2.SetActive(true);
             gameManager.vcam.Shake(2);
+            gameManager.detecting = false;
         }
         if(timeline>=2.7f&&state!="2.7B"&&timeline<=2.9f)
         {
@@ -52,6 +55,7 @@ public class MinorEffect : TrackEffectBase
         }
         if(timeline>=2.7f&&timeline<16.9f)
         {
+            gameManager.detecting = true;
             gameManager.vcam.Shake(1);
         }
         if (timeline >= 16.85f && state !="16.85B" &&timeline<=17.0)
@@ -100,7 +104,7 @@ public class MinorEffect : TrackEffectBase
             gameManager.vcam.Shake(10);
             foreach (Transform child in background.transform)
             {
-                child.GetComponent<SpriteRenderer>().color = Color.blue;
+                child.GetComponent<SpriteRenderer>().color = Color.cyan;
             }
         }
         if(timeline>=45.4&&timeline<49.0)

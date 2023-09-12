@@ -14,6 +14,7 @@ public class TrackData : MonoBehaviour
 
     public string music;
     public int trackTime;
+    public int soundOffset;
     public TrackEffectBase effect;
 
     [HideInInspector]

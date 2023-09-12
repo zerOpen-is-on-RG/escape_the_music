@@ -153,6 +153,7 @@ public class Note : MonoBehaviour
     }
 
     public void NoteDown() {
+        if (ESC_command.Instance.isPaused) return;
         startPos = transform.position;
         touchId = Input.touchCount - 1;
         isPressed = true;
@@ -197,6 +198,7 @@ public class Note : MonoBehaviour
 
     public void NoteUp()
     {
+        if (ESC_command.Instance.isPaused) return;
         if (broken) return;
 
         isPressed = false;
