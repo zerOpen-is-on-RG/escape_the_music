@@ -134,36 +134,14 @@ public class MinorEffect : TrackEffectBase
             background.SetActive(false);
         }
 
-        if (timeline >= 82 && timeline <= 99)
-        {
-            gameManager.detecting = true;
-            var pattern = gameManager.track.pattern.patterns.Find((v) => gameManager.track.MathperfectTime(v).Equals(Mathf.Floor(timeline * 10) / 10) && !spawnedObjects.Contains(v.timeline));
-
-            if (pattern != null && pattern.noteType != "default")
-            {
-                spawnedObjects.Add(pattern.timeline);
-
-                int i = UnityEngine.Random.Range(0, obstacles.Length);
-                if (i < 0) i = 0;
-
-                var obstacle = Instantiate(obstacles[0]);
-                obstacle.transform.SetParent(map.transform);
-                obstacle.transform.localPosition = new Vector2(-85.83f, 11.01f);
-
-                objects.Add(obstacle);
-            }
-
-            objects.ForEach(v => {
-                float a = 2 - 0.05f * gameManager.track.pattern.patternSpeed + 0.25f;
-                v.transform.localPosition = new Vector2(v.transform.localPosition.x + (Time.deltaTime * 10.1f / a), v.transform.localPosition.y);
-            });
-        }
         if (timeline >= 82 && timeline < 103.4)
         {
+            gameManager.detecting = true;
             gameManager.vcam.Shake(1);
         }
         if (timeline>=103.4&&state!="103.B"&&timeline<=104)
         {
+            gameManager.detecting = false;
             state = "103.B";
             map.transform.DOLocalMove(new Vector2(135, 0), 2.5f);
         }
