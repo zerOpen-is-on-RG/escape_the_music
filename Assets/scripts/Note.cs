@@ -101,6 +101,7 @@ public class Note : MonoBehaviour
             if (isPressed)
             {
                 Vector2 pos = (touchId == -1) ? Input.mousePosition : Input.GetTouch(touchId).position;
+                Debug.Log(Input.GetTouch(touchId).fingerId);
                 var point = Camera.main.ScreenToWorldPoint(pos);
                 transform.position = new Vector2(point.x, transform.position.y);
 
@@ -154,8 +155,10 @@ public class Note : MonoBehaviour
 
     public void NoteDown() {
         if (ESC_command.Instance.isPaused) return;
-        startPos = transform.position;
         touchId = Input.touchCount - 1;
+        if (Input.GetTouch(touchId).phase != TouchPhase.Began) return;
+
+        startPos = transform.position;
         isPressed = true;
 
         if (transform.localPosition.y > _gameManager.activeLine)
